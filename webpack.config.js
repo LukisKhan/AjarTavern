@@ -1,6 +1,7 @@
 const path = require('path');
 
 module.exports = {
+  mode: "development",
   entry: './frontend/ajarTavern.jsx',
   output: {
     path: path.resolve(__dirname, 'app', 'assets', 'javascripts'),
@@ -13,7 +14,7 @@ module.exports = {
         exclude: /node_modules/,
         loader: 'babel-loader',
         query: {
-          presets: ['env', 'react']
+          presets: ['@babel/env', '@babel/react']
         }
       }
     ]

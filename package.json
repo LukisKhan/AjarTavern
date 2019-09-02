@@ -4,7 +4,7 @@
   "main": "webpack.config.js",
   "dependencies": {
     "@babel/core": "^7.5.5",
-    "@babel/env": "^7.5.5",
+    "@babel/preset-env": "^7.5.5",
     "@babel/preset-react": "^7.0.0",
     "babel-loader": "^8.0.6",
     "react": "^16.9.0",
@@ -17,7 +17,6 @@
   },
   "description": "This README would normally document whatever steps are necessary to get the application up and running.",
   "version": "1.0.0",
-  "main": "index.js",
   "directories": {
     "lib": "lib",
     "test": "test"
