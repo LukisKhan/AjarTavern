@@ -6,12 +6,14 @@ import App from './app';
 //wraps App with provider/router
 
 
-const Root = ({ store }) => (
+const Root = ({ store }) => {
+  debugger;
+  return (
   <Provider store={store}>
     <HashRouter>
       <App />
     </HashRouter>
   </Provider>
 );
-
+}
 export default Root;

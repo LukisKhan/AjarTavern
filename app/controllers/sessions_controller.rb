@@ -5,7 +5,7 @@ class SessionsController < ApplicationController
     @user = User.find_by_credentials(params[:user][:username], params[:user][:password])
     if @user
       login!(@user)
-      render plain: "saved user to databse"
+      render plain: "saved user to database"
     else
       flash.now[:errors] = ['Invalid username or password']
       render plain: "can't save user to database"
