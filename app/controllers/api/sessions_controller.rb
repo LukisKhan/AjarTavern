@@ -1,14 +1,12 @@
-class SessionsController < ApplicationController
-  def new
-  end
+class Api::SessionsController < ApplicationController
   def create
     @user = User.find_by_credentials(params[:user][:username], params[:user][:password])
     if @user
       login!(@user)
-      render plain: "saved user to database"
+      render "api/users/show"
     else
-      flash.now[:errors] = ['Invalid username or password']
-      render plain: "can't save user to database"
+      # render plain: "can't log in"
+      render json: ["Incorrect password or username"],status: 401
     end
   end
   def destroy

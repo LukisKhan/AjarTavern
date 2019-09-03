@@ -20,12 +20,12 @@ class Login extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     this.props.login(this.state)
-      .then(() => this.props.history.push('/chirps'));
+      .then(() => this.props.history.push('/'));
   }
 
   render() {
     // console.log(this.props);
-    debugger;
+    // debugger;
     return (
       <div className="session-form">
         <h2>Log In!</h2>

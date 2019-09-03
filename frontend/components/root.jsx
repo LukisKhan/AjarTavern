@@ -7,7 +7,6 @@ import App from './app';
 
 
 const Root = ({ store }) => {
-  debugger;
   return (
   <Provider store={store}>
     <HashRouter>

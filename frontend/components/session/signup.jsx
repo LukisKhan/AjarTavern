@@ -21,7 +21,7 @@ class Signup extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     this.props.createNewUser(this.state)
-      .then(() => this.props.history.push('/chirps'));
+      .then(() => this.props.history.push('/'));
   }
 
   render() {
@@ -29,7 +29,7 @@ class Signup extends React.Component {
     return (
       <div className="session-form">
         <h2>Sign Up!</h2>
-        <form>
+        <form onSubmit={this.handleSubmit}>
           <label>Username:
             <input
               type="text"
@@ -50,8 +50,8 @@ class Signup extends React.Component {
               value={this.state.password}
               onChange={this.handleInput('password')}
             />
-            <button onClick={this.handleSubmit}>Sign Up!</button>
           </label>
+          <button>Sign Up!</button>
         </form>
       </div>
     );
