@@ -11,22 +11,33 @@ class Signup extends React.Component {
 
     this.handleSubmit = this.handleSubmit.bind(this);
   }
-
   handleInput(type) {
     return (e) => {
       this.setState({ [type]: e.target.value });
     };
   }
-
   handleSubmit(e) {
     e.preventDefault();
     this.props.createNewUser(this.state)
-      .then(() => this.props.history.push('/'));
+      .then(() => {
+        console.log("signup successful");
+        // this.hideModal("myModal");
+      });
   }
-
-  render() {
-    // console.log(this.props);
+  createModal(text) {
     return (
+      <div>
+        <button id="myBtn">Sign Up</button>
+        <div id="myModal" className="modal">
+          <div className="modal-content">
+            <span className="close">&times;</span>
+            {text}
+          </div>
+        </div>
+      </div>)
+  }
+  createSignUpForm() {
+    return(
       <div className="session-form">
         <h2>Sign Up!</h2>
         <form onSubmit={this.handleSubmit}>
@@ -54,7 +65,19 @@ class Signup extends React.Component {
           <button>Sign Up!</button>
         </form>
       </div>
-    );
+    )
+  }
+  hideModal(modalId){
+    var modal = document.getElementById(modalId);
+    modal.style.display = "none";
+  }
+  render() {
+    let signUpForm = this.createSignUpForm();
+    return (
+      <div>
+        {this.createModal(signUpForm)}
+      </div>
+    )
   }
 }
 

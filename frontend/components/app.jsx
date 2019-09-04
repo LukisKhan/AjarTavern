@@ -12,7 +12,6 @@ export default () => {
   return (
     <div>
       <HomeContainer />
-      <Route path="/signup" component={SignupContainer} />
       <Route path="/login" component={LoginContainer} />
     </div>
   );
