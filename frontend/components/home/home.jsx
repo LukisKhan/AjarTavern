@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import SignupContainer from '../session/signup_container'
+import SignupContainer from '../session/signup_container';
+import LoginContainer from '../session/login_container';
 //change login to sign in 
 class Home extends Component {
   handleLogout() {
@@ -21,9 +22,7 @@ class Home extends Component {
         <div className="nav-bar">
           <nav className="auth-btn">
             <SignupContainer />
-            <button className="login">
-              <Link to="/login"> Log In </Link>
-            </button>
+            <LoginContainer />
           </nav>
         </div>
       )

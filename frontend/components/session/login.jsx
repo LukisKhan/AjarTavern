@@ -23,9 +23,19 @@ class Login extends React.Component {
       .then(() => console.log("login sucessful"));
   }
 
-  render() {
-    // console.log(this.props);
-    // debugger;
+  createModal(text) {
+    return (
+      <div>
+        <button id="logInBtn">Log in</button>
+        <div id="logInModal" className="modal">
+          <div className="modal-content">
+            <span className="logInClose">&times;</span>
+            {text}
+          </div>
+        </div>
+      </div>)
+  }
+  createLoginForm() {
     return (
       <div className="session-form">
         <h2>Log In!</h2>
@@ -48,6 +58,14 @@ class Login extends React.Component {
           </label>
         </form>
       </div>
+    )
+  }
+
+  render() {
+    // console.log(this.props);
+    // debugger;
+    return (
+      this.createModal(this.createLoginForm())
     );
   }
 }

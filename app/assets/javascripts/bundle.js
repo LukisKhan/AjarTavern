@@ -169,32 +169,31 @@ document.addEventListener('DOMContentLoaded', function () {
   react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.render(react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_root__WEBPACK_IMPORTED_MODULE_3__["default"], {
     store: store
   }), root);
+  configModal("signUp");
+  configModal("logIn");
   window.store = store;
   console.log(window.store.getState().session.currentUser);
-  console.log(store.getState()); // Get the modal
+  console.log(store.getState());
+});
 
-  var modal = document.getElementById("myModal"); // Get the button that opens the modal
-
-  var btn = document.getElementById("myBtn"); // Get the <span> element that closes the modal
-
-  var span = document.getElementsByClassName("close")[0]; // When the user clicks on the button, open the modal 
+function configModal(type) {
+  var modal = document.getElementById(type + "Modal");
+  var btn = document.getElementById(type + "Btn");
+  var span = document.getElementsByClassName(type + "Close")[0];
 
   btn.onclick = function () {
     modal.style.display = "block";
-  }; // When the user clicks on <span> (x), close the modal
-
+  };
 
   span.onclick = function () {
     modal.style.display = "none";
-  }; // When the user clicks anywhere outside of the modal, close it
-
-
-  window.onclick = function (event) {
-    if (event.target == modal) {
-      modal.style.display = "none";
-    }
   };
-});
+} // When the user clicks anywhere outside of the modal, close it
+// window.onclick = function (event) {
+//   if (event.target == modal) {
+//     modal.style.display = "none";
+//   }
+// }
 
 /***/ }),
 
@@ -244,6 +243,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
 /* harmony import */ var _session_signup_container__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../session/signup_container */ "./frontend/components/session/signup_container.js");
+/* harmony import */ var _session_login_container__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../session/login_container */ "./frontend/components/session/login_container.js");
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -261,6 +261,7 @@ function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.g
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
 
 
 
@@ -297,11 +298,7 @@ function (_Component) {
           className: "nav-bar"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("nav", {
           className: "auth-btn"
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_session_signup_container__WEBPACK_IMPORTED_MODULE_2__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-          className: "login"
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
-          to: "/login"
-        }, " Log In "))));
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_session_signup_container__WEBPACK_IMPORTED_MODULE_2__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_session_login_container__WEBPACK_IMPORTED_MODULE_3__["default"], null)));
       }
     }
   }]);
@@ -448,10 +445,22 @@ function (_React$Component) {
       });
     }
   }, {
-    key: "render",
-    value: function render() {
-      // console.log(this.props);
-      // debugger;
+    key: "createModal",
+    value: function createModal(text) {
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        id: "logInBtn"
+      }, "Log in"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        id: "logInModal",
+        className: "modal"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "modal-content"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        className: "logInClose"
+      }, "\xD7"), text)));
+    }
+  }, {
+    key: "createLoginForm",
+    value: function createLoginForm() {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "session-form"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Log In!"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, "Username:", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
@@ -465,6 +474,13 @@ function (_React$Component) {
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         onClick: this.handleSubmit
       }, "Log In!"))));
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      // console.log(this.props);
+      // debugger;
+      return this.createModal(this.createLoginForm());
     }
   }]);
 
@@ -580,14 +596,14 @@ function (_React$Component) {
     key: "createModal",
     value: function createModal(text) {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-        id: "myBtn"
+        id: "signUpBtn"
       }, "Sign Up"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        id: "myModal",
+        id: "signUpModal",
         className: "modal"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "modal-content"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-        className: "close"
+        className: "signUpClose"
       }, "\xD7"), text)));
     }
   }, {
@@ -621,7 +637,8 @@ function (_React$Component) {
     key: "render",
     value: function render() {
       var signUpForm = this.createSignUpForm();
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, this.createModal(signUpForm));
+      var myModal = this.createModal(signUpForm);
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, myModal);
     }
   }]);
 

@@ -27,10 +27,10 @@ class Signup extends React.Component {
   createModal(text) {
     return (
       <div>
-        <button id="myBtn">Sign Up</button>
-        <div id="myModal" className="modal">
+        <button id="signUpBtn">Sign Up</button>
+        <div id="signUpModal" className="modal">
           <div className="modal-content">
-            <span className="close">&times;</span>
+            <span className="signUpClose">&times;</span>
             {text}
           </div>
         </div>
@@ -73,9 +73,10 @@ class Signup extends React.Component {
   }
   render() {
     let signUpForm = this.createSignUpForm();
+    let myModal = this.createModal(signUpForm);
     return (
       <div>
-        {this.createModal(signUpForm)}
+        {myModal}
       </div>
     )
   }
