@@ -8,4 +8,8 @@ document.addEventListener('DOMContentLoaded', () => {
   let preloadedState = undefined;
   let store = configureStore(preloadedState);
   ReactDOM.render(<Root store={store} />, root);
+  window.store = store;
+  console.log(window.store.getState().session.currentUser);
+  console.log(store.getState());
 })
+
