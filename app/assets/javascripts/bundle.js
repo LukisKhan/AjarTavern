@@ -233,7 +233,7 @@ document.addEventListener('DOMContentLoaded', function () {
   }), root); //testing
 
   window.store = store;
-  window.signup = _actions_session_action__WEBPACK_IMPORTED_MODULE_4__["signup"];
+  window.createNewUser = _actions_session_action__WEBPACK_IMPORTED_MODULE_4__["createNewUser"];
   window.login = _actions_session_action__WEBPACK_IMPORTED_MODULE_4__["login"];
   window.logout = _actions_session_action__WEBPACK_IMPORTED_MODULE_4__["logout"];
   window.getState = store.getState;

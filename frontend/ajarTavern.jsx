@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import configureStore from './store/store';
 import Root from './components/root';
 //testing
-import { signup, login, logout } from './actions/session_action';
+import { createNewUser, login, logout } from './actions/session_action';
 //
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -25,11 +25,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
 //testing
   window.store = store;
-  window.signup = signup
-  window.login = login
-  window.logout = logout
-  window.getState = store.getState
-  window.dispatch = store.dispatch
+  window.createNewUser = createNewUser;
+  window.login = login;
+  window.logout = logout;
+  window.getState = store.getState;
+  window.dispatch = store.dispatch;
   let modal = document.getElementById("signUpModal");
   if (modal) {
     configModal("signUp");
