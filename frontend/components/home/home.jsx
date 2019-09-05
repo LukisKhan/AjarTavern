@@ -11,15 +11,15 @@ class Home extends Component {
   render() {
     if (this.props.currentUser) {
       return (
-        <div>
-          <button className="logout" onClick={this.handleLogout.bind(this)} >
-            <Link to="/"> Log Out </Link>
-          </button>
+        <div className="nav-bar-right">
+          <nav className="auth-btn">
+            <button className="logout" onClick={this.handleLogout.bind(this)} ></button>
+          </nav>
         </div>
         )
     } else {
       return (
-        <div className="nav-bar">
+        <div className="nav-bar-right">
           <nav className="auth-btn">
             <SignupContainer />
             <LoginContainer />

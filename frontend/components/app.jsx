@@ -7,12 +7,19 @@ import { Route } from 'react-router-dom';
 import SignupContainer from './session/signup_container';
 import LoginContainer from './session/login_container';
 import HomeContainer from './home/home_container';
-
+import { Link } from 'react-router-dom'
+// import logo from "../../app/assets/images/bg.jpeg";
+// import logo from "./bg.png";
 export default () => {
   return (
     <div>
-      <HomeContainer />
-      <Route path="/login" component={LoginContainer} />
+      <div className="nav-bar">
+        <div className="nav-bar-left">
+          <nav className="logo"></nav>
+          <nav className="loc-dropdown"></nav>
+        </div>
+        <HomeContainer />
+      </div>
     </div>
   );
 }
