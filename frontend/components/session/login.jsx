@@ -7,8 +7,12 @@ class Login extends React.Component {
       username: '',
       password: '',
     };
-
+    this.handleClick = this.handleClick.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  handleClick () {
+    0;
   }
 
   handleInput(type) {
@@ -20,7 +24,7 @@ class Login extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     this.props.login(this.state)
-      .then(() => console.log("login sucessful"));
+      .then(() => this.props.closeModal);
   }
 
   createModal(text) {
@@ -62,8 +66,6 @@ class Login extends React.Component {
   }
 
   render() {
-    // console.log(this.props);
-    // debugger;
     return (
       this.createModal(this.createLoginForm())
     );

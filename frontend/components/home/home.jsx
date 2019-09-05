@@ -9,11 +9,11 @@ class Home extends Component {
   }
 
   render() {
-    if (this.props.currentUser) {
+    if (this.props.currentUserId) {
       return (
         <div className="nav-bar-right">
           <nav className="auth-btn">
-            <button className="logout" onClick={this.handleLogout.bind(this)} ></button>
+            <button className="logout" onClick={this.handleLogout.bind(this)} >Log Out</button>
           </nav>
         </div>
         )

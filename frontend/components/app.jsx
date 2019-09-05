@@ -1,26 +1,26 @@
 import React from 'react';
 import { Route } from 'react-router-dom';
-import SignupContainer from './session/signup_container';
-import LoginContainer from './session/login_container';
 import HomeContainer from './home/home_container';
-import { Link } from 'react-router-dom'
-// import logo from "../../app/assets/images/bg.jpeg";
-// import logo from "./bg.png";
+import ModalContainer from './modal/modal_container';
+import NavbarContainer from './nav/navbar_container';
+
 export default () => {
-  let loggedInBar;
+  let notLoggedIn;
   console.log(window.currentUser);
   if (!window.currentUser) {
-    loggedInBar = <HomeContainer />
+    notLoggedIn = <HomeContainer />
   }
   return (
     <div>
+      {/* <ModalContainer /> */}
+      {/* <NavbarContainer /> */}
       <div className="nav-bar">
         <div className="nav-bar-left">
           <nav className="logo"></nav>
           <nav className="loc-dropdown"></nav>
         </div>
         
-        {loggedInBar}
+        {notLoggedIn}
       </div>
       <div className="restaurant-search-box">
         <div className="search-options">
@@ -30,7 +30,11 @@ export default () => {
             <option value="700">7:00 PM</option>
             <option value="800">8:00 PM</option>
           </select>
-          <select name="guests" id="" className="num-guests-select"></select>
+          <select name="guests" id="" className="num-guests-select">
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+          </select>
         </div>
       </div>
     </div>

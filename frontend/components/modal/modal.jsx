@@ -1,6 +1,4 @@
 import React from 'react';
-import { closeModal } from '../actions/modal_actions';
-import { connect } from 'react-redux';
 import LoginFormContainer from '../session/login_container';
 import SignupFormContainer from '../session/signup_container';
 
@@ -27,3 +25,5 @@ function Modal({ modal, closeModal }) {
     </div>
   );
 }
+
+export default Modal;
