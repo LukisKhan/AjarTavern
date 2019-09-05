@@ -2,6 +2,9 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import configureStore from './store/store';
 import Root from './components/root';
+//testing
+import { signup, login, logout } from './actions/session_action';
+//
 
 document.addEventListener('DOMContentLoaded', () => {
   let store;
@@ -20,13 +23,19 @@ document.addEventListener('DOMContentLoaded', () => {
   const root = document.getElementById('root');
   ReactDOM.render(<Root store={store} />, root);
 
-
+//testing
   window.store = store;
+  window.signup = signup
+  window.login = login
+  window.logout = logout
+  window.getState = store.getState
+  window.dispatch = store.dispatch
   let modal = document.getElementById("signUpModal");
   if (modal) {
     configModal("signUp");
     configModal("logIn");
   }
+//testing
 })
 
 function configModal(type) {
