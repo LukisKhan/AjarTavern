@@ -28,9 +28,13 @@
 }
 .logo {
   width: 150px;
-  height: 25px;
+  height: 40px;
   border: solid gray;
   border-width: 1px;
+  background-image: url("https://image.flaticon.com/icons/png/128/141/141888.png");
+  background-size: 100px 40px;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 .loc-dropdown {
   width: 40px;
@@ -137,7 +141,9 @@ body, html {
   position: relative;
 }
 .search-options {
-
+  position: relative;
+  top: 200px;
+  left: 300px;
 }
 .date-dropdown {
 
