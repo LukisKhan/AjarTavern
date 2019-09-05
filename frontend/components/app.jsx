@@ -24,7 +24,8 @@ export default () => {
       </div>
       <div className="restaurant-search-box">
         <div className="search-options">
-          <select name="date" id="" className="date-dropdown"></select>
+          <input type="date" id="start" name="booking-date"
+            min="2019-01-01" max="2019-12-31" />
           <select>
             <option value="600">6:00 PM</option>
             <option value="700">7:00 PM</option>
@@ -36,6 +37,8 @@ export default () => {
             <option value="4">4</option>
           </select>
         </div>
+        <input type="text" name="search-field" id=""/>
+        <button>Let's Go</button>
       </div>
     </div>
   );

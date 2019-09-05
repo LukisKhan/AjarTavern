@@ -308,10 +308,12 @@ __webpack_require__.r(__webpack_exports__);
     className: "restaurant-search-box"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "search-options"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("select", {
-    name: "date",
-    id: "",
-    className: "date-dropdown"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    type: "date",
+    id: "start",
+    name: "booking-date",
+    min: "2019-01-01",
+    max: "2019-12-31"
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("select", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
     value: "600"
   }, "6:00 PM"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
@@ -328,7 +330,11 @@ __webpack_require__.r(__webpack_exports__);
     value: "3"
   }, "3"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
     value: "4"
-  }, "4")))));
+  }, "4"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    type: "text",
+    name: "search-field",
+    id: ""
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", null, "Let's Go")));
 });
 
 /***/ }),
@@ -31142,7 +31148,7 @@ function warning(message) {
 /*!***************************************************************!*\
   !*** ./node_modules/react-router-dom/esm/react-router-dom.js ***!
   \***************************************************************/
-/*! exports provided: MemoryRouter, Prompt, Redirect, Route, Router, StaticRouter, Switch, generatePath, matchPath, withRouter, __RouterContext, BrowserRouter, HashRouter, Link, NavLink */
+/*! exports provided: BrowserRouter, HashRouter, Link, NavLink, MemoryRouter, Prompt, Redirect, Route, Router, StaticRouter, Switch, generatePath, matchPath, withRouter, __RouterContext */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";

@@ -140,10 +140,16 @@ body, html {
   z-index: -1;
   position: relative;
 }
-.search-options {
+.restaurant-search-box {
   position: relative;
+  display: flex;
+  width: 480px;
+  justify-content: space-evenly;
   top: 200px;
-  left: 300px;
+  left: 250px;
+}
+.search-options {
+
 }
 .date-dropdown {
 
