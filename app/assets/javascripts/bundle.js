@@ -290,13 +290,67 @@ __webpack_require__.r(__webpack_exports__);
 
 /* harmony default export */ __webpack_exports__["default"] = (function () {
   var notLoggedIn;
-  console.log(window.currentUser);
 
   if (!window.currentUser) {
     notLoggedIn = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_home_home_container__WEBPACK_IMPORTED_MODULE_2__["default"], null);
   }
 
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  var topbar = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "topbar"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "rightbar"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "for-restuaranteurs"
+  }, "For Restuaranteurs"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "mobile"
+  }, "Mobile"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "help"
+  }, "Help")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "lang"
+  }, "EN"));
+  var selectTime = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("select", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+    value: "800"
+  }, "8:00 AM"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+    value: "900"
+  }, "9:00 AM"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+    value: "1000"
+  }, "10:00 AM"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+    value: "1100"
+  }, "11:00 AM"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+    value: "1200"
+  }, "12:00 PM"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+    value: "1300"
+  }, "1:00 PM"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+    value: "1400"
+  }, "2:00 PM"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+    value: "1500"
+  }, "3:00 PM"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+    value: "1600"
+  }, "4:00 PM"));
+  var selectNumGuest = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("select", {
+    name: "guests",
+    id: "",
+    className: "num-guests-select"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+    value: "2"
+  }, "2"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+    value: "3"
+  }, "3"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+    value: "4"
+  }, "4"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+    value: "5"
+  }, "5"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+    value: "6"
+  }, "6"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+    value: "7"
+  }, "7"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+    value: "8"
+  }, "8"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+    value: "9"
+  }, "9"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+    value: "10"
+  }, "10"));
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, topbar, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "nav-bar"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "nav-bar-left"
@@ -314,23 +368,7 @@ __webpack_require__.r(__webpack_exports__);
     name: "booking-date",
     min: "2019-01-01",
     max: "2019-12-31"
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("select", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
-    value: "600"
-  }, "6:00 PM"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
-    value: "700"
-  }, "7:00 PM"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
-    value: "800"
-  }, "8:00 PM")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("select", {
-    name: "guests",
-    id: "",
-    className: "num-guests-select"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
-    value: "2"
-  }, "2"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
-    value: "3"
-  }, "3"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
-    value: "4"
-  }, "4"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+  }), selectTime, selectNumGuest), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
     type: "text",
     name: "search-field",
     id: ""
@@ -971,6 +1009,8 @@ function (_React$Component) {
     _this = _possibleConstructorReturn(this, _getPrototypeOf(Signup).call(this, props));
     _this.state = {
       username: '',
+      firstname: '',
+      lastname: '',
       email: '',
       password: ''
     };
@@ -1014,12 +1054,20 @@ function (_React$Component) {
     value: function createSignUpForm() {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "session-form"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Sign Up!"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Welcome to Ajar Tavern"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
         onSubmit: this.handleSubmit
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, "Username:", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "text",
         value: this.state.username,
         onChange: this.handleInput('username')
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, "First Name:", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        type: "text",
+        value: this.state.firstname,
+        onChange: this.handleInput('firstname')
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, "Last Name:", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        type: "text",
+        value: this.state.lastname,
+        onChange: this.handleInput('lastname')
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, "Email:", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "text",
         value: this.state.email,
@@ -31148,7 +31196,7 @@ function warning(message) {
 /*!***************************************************************!*\
   !*** ./node_modules/react-router-dom/esm/react-router-dom.js ***!
   \***************************************************************/
-/*! exports provided: BrowserRouter, HashRouter, Link, NavLink, MemoryRouter, Prompt, Redirect, Route, Router, StaticRouter, Switch, generatePath, matchPath, withRouter, __RouterContext */
+/*! exports provided: MemoryRouter, Prompt, Redirect, Route, Router, StaticRouter, Switch, generatePath, matchPath, withRouter, __RouterContext, BrowserRouter, HashRouter, Link, NavLink */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";

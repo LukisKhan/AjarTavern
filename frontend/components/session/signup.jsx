@@ -5,6 +5,8 @@ class Signup extends React.Component {
     super(props);
     this.state = {
       username: '',
+      firstname: '',
+      lastname: '',
       email: '',
       password: '',
     };
@@ -39,13 +41,27 @@ class Signup extends React.Component {
   createSignUpForm() {
     return(
       <div className="session-form">
-        <h2>Sign Up!</h2>
+        <h2>Welcome to Ajar Tavern</h2>
         <form onSubmit={this.handleSubmit}>
           <label>Username:
             <input
               type="text"
               value={this.state.username}
               onChange={this.handleInput('username')}
+            />
+          </label>
+          <label>First Name:
+            <input
+              type="text"
+              value={this.state.firstname}
+              onChange={this.handleInput('firstname')}
+            />
+          </label>
+          <label>Last Name:
+            <input
+              type="text"
+              value={this.state.lastname}
+              onChange={this.handleInput('lastname')}
             />
           </label>
           <label>Email:

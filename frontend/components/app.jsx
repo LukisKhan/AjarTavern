@@ -3,15 +3,44 @@ import { Route } from 'react-router-dom';
 import HomeContainer from './home/home_container';
 import ModalContainer from './modal/modal_container';
 import NavbarContainer from './nav/navbar_container';
-
 export default () => {
   let notLoggedIn;
-  console.log(window.currentUser);
   if (!window.currentUser) {
     notLoggedIn = <HomeContainer />
   }
+  const topbar = (<div className="topbar">
+    <div className="rightbar">
+      <span className="for-restuaranteurs">For Restuaranteurs</span>
+      <span className="mobile">Mobile</span>
+      <span className="help">Help</span>
+    </div>
+    <div className="lang">EN</div>
+  </div>);
+  const selectTime = ( <select>
+      <option value="800">8:00 AM</option>
+      <option value="900">9:00 AM</option>
+      <option value="1000">10:00 AM</option>
+      <option value="1100">11:00 AM</option>
+      <option value="1200">12:00 PM</option>
+      <option value="1300">1:00 PM</option>
+      <option value="1400">2:00 PM</option>
+      <option value="1500">3:00 PM</option>
+      <option value="1600">4:00 PM</option>
+    </select> );
+  const selectNumGuest = (<select name="guests" id="" className="num-guests-select">
+    <option value="2">2</option>
+    <option value="3">3</option>
+    <option value="4">4</option>
+    <option value="5">5</option>
+    <option value="6">6</option>
+    <option value="7">7</option>
+    <option value="8">8</option>
+    <option value="9">9</option>
+    <option value="10">10</option>
+  </select>)
   return (
     <div>
+      {topbar}
       {/* <ModalContainer /> */}
       {/* <NavbarContainer /> */}
       <div className="nav-bar">
@@ -19,27 +48,20 @@ export default () => {
           <nav className="logo"></nav>
           <nav className="loc-dropdown"></nav>
         </div>
-        
         {notLoggedIn}
       </div>
+
       <div className="restaurant-search-box">
         <div className="search-options">
           <input type="date" id="start" name="booking-date"
             min="2019-01-01" max="2019-12-31" />
-          <select>
-            <option value="600">6:00 PM</option>
-            <option value="700">7:00 PM</option>
-            <option value="800">8:00 PM</option>
-          </select>
-          <select name="guests" id="" className="num-guests-select">
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-          </select>
+          {selectTime}
+          {selectNumGuest}
         </div>
         <input type="text" name="search-field" id=""/>
         <button>Let's Go</button>
       </div>
+      
     </div>
   );
 }
