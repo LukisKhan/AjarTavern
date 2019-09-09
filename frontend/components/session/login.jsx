@@ -92,8 +92,7 @@ class Login extends React.Component {
             <input className="session-submit" type="submit" value="Sign In" />
             <button onClick={this.handleDemoUser} className="session-submit" >Demo User</button>
           </div>
-          <div className="new-account">
-            New to OpenRes? &nbsp;
+          <div>
             <a href="#">Create an account</a>
           </div>
         </form>

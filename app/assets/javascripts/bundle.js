@@ -987,9 +987,7 @@ function (_React$Component) {
         }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
           onClick: this.handleDemoUser,
           className: "session-submit"
-        }, "Demo User")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-          className: "new-account"
-        }, "New to OpenRes? \xA0", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        }, "Demo User")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
           href: "#"
         }, "Create an account"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "modal screen js-modal-close"
