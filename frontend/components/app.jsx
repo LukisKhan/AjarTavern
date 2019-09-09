@@ -41,14 +41,14 @@ export default () => {
   return (
     <div>
       {topbar}
-      {/* <ModalContainer /> */}
-      {/* <NavbarContainer /> */}
       <div className="nav-bar">
         <div className="nav-bar-left">
           <nav className="logo"></nav>
           <nav className="loc-dropdown"></nav>
         </div>
-        {notLoggedIn}
+        <ModalContainer />
+        {/* {notLoggedIn} */}
+        <NavbarContainer />
       </div>
 
       <div className="restaurant-search-box">

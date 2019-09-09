@@ -10,10 +10,10 @@ class Signup extends React.Component {
       email: '',
       password: '',
     };
-
     this.handleSubmit = this.handleSubmit.bind(this);
+    // this.handleClick = this.handleClick.bind(this);
   }
-  handleInput(type) {
+  update(type) {
     return (e) => {
       this.setState({ [type]: e.target.value });
     };
@@ -21,28 +21,31 @@ class Signup extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     this.props.createNewUser(this.state)
-      .then(() => {
-        console.log("signup successful");
-        // this.hideModal("myModal");
-      });
+      .then(this.props.closeModal);
   }
-  createModal(text) {
+  // handleClick(e) {
+  //   e.preventDefault();
+  //   this.props.processForm(this.props.demoUser).then(this.props.closeModal);
+  // }
+  //let's not use this for now
+  createModal(form) {
     return (
       <div>
         <button id="signUpBtn">Sign Up</button>
         <div id="signUpModal" className="modal">
           <div className="modal-content">
             <span className="signUpClose">&times;</span>
-            {text}
+            {form}
           </div>
         </div>
       </div>)
   }
+  //lets not use this for now
   createSignUpForm() {
     return(
       <div className="session-form">
         <h2>Welcome to Ajar Tavern</h2>
-        <form onSubmit={this.handleSubmit}>
+        <form onSubmit={this.handleSubmit} className="modal-form">
           <label>Username:
             <input
               type="text"
@@ -83,18 +86,53 @@ class Signup extends React.Component {
       </div>
     )
   }
+  //lets not use this fornow
   hideModal(modalId){
     var modal = document.getElementById(modalId);
     modal.style.display = "none";
   }
-  render() {
-    let signUpForm = this.createSignUpForm();
-    let myModal = this.createModal(signUpForm);
+
+  //lets not use this for now
+  // render() {
+  //   let signUpForm = this.createSignUpForm();
+  //   let myModal = this.createModal(signUpForm);
+  //   return (
+  //     <div>
+  //       {myModal}
+  //     </div>
+  //   )
+  // }
+  renderErrors() {
     return (
-      <div>
-        {myModal}
+      <ul>
+        {this.props.errors.map((error, i) => (
+          <li key={`error-${i}`}>
+            {error}
+          </li>
+        ))}
+      </ul>
+    );
+  }
+  render() {
+    return (
+      <div className="modal-screen">
+        <form onSubmit={this.handleSubmit} className="modal-form">
+          <h1>Welcome to Ajar Tavern!</h1>
+          <div className="auth-errors">
+            {this.renderErrors()}
+          </div>
+          <input placeholder="Username" className="form-input" type="text" value={this.state.username} onChange={this.update('username')} />
+          <input placeholder="First Name" className="form-input" type="text" value={this.state.firstname} onChange={this.update('firstname')} />
+          <input placeholder="Last Name" className="form-input" type="text" value={this.state.lastname} onChange={this.update('lastname')} />
+          <input placeholder="Email" className="form-input" type="text" value={this.state.email} onChange={this.update('email')} />
+          <input placeholder="Password" className="form-input" type="password" value={this.state.password} onChange={this.update('password')} />
+          <div className="submit">
+            <input className="session-submit" type="submit" value="Create Account" />
+          </div>
+        </form>
+        <div className="modal screen js-modal-close"></div>
       </div>
-    )
+    );
   }
 }
 

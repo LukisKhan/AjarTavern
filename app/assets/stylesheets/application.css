@@ -19,7 +19,7 @@
   background-color: rgb(245, 245, 245);
   position: relative;
   top: -8px;
-  padding: 0px 20px;
+  padding: 0px 15px 0px 0px;
  }
 .rightbar {
    display: flex;
@@ -40,6 +40,8 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: relative;
+  top: -8px;
 }
 
 .nav-bar-right {
@@ -57,38 +59,60 @@
   color: rgb(120, 120, 120);
 }
 .logo {
-  width: 150px;
-  height: 40px;
-  border: solid gray;
+  width: 200px;
+  height: 50px;
+  border-right: solid rgb(225, 219, 219);
   border-width: 1px;
-  background-image: url("https://image.flaticon.com/icons/png/128/141/141888.png");
-  background-size: 100px 40px;
+  background-image: url("logo.png");
+  /* background-size: 100px 40px; */
   background-repeat: no-repeat;
   background-position: center;
 }
 .loc-dropdown {
-  width: 40px;
-  height: 25px;
-  border: solid gray;
+  width: 65px;
+  height: 50px;
+  border-right: solid rgb(225, 219, 219);
   border-width: 1px;
 }
 .auth-btn {
-  margin: 20px;
   display: flex;
   justify-content: space-evenly;
-  width: 165px;
+  width: 185px;
+  margin-right: 20px;
   text-decoration: none;
 }
-.auth-btn .signup {
-   background-color: rgb(17, 106, 133);
-   padding-top: 5px;
-   padding-bottom: 5px;
+#signUpBtn {
+   background-color: rgb(27, 122, 150);
+   width: 77px;
+   padding: 8.5px;
+   font-size: 12px;
+   color: #f0e9e9;
+   font-weight: 400;
+   border-radius: 3px;
+   border: none;
+ }
+ #logInBtn {
+  padding: 8px;
+  width: 75px;
+  font-size: 14px;
+  font-weight: 500;
+  border-radius: 5px;
+  border: none;
  }
 
-.auth-btn .signup a:hover {
+#signUpBtn:hover {
   text-decoration: none;
+  background-color: rgb(9, 86, 109);
  }
 
+ .dropdown-hidden {
+   display: none;
+
+ }
+
+ .dropdown-visible {
+   display: block;
+ }
  .modal {
    display: none;
    /* Hidden by default */
@@ -161,12 +185,13 @@ body, html {
   /* The image used */
   background-image: url("https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80");
   /* Full height */
-  height: 60%;
+  height: 65%;
   /* Center and scale the image nicely */
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   margin-left: -10px;
+  margin-top: -29px;
   z-index: -1;
   position: relative;
 }

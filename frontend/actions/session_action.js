@@ -16,6 +16,10 @@ export const receiveErrors = errors => ({
   errors
 });
 
+export const resetSessionErrors = errors => ({
+  type: 'RESET_SESSION_ERRORS',
+  errors
+});
 
 export const createNewUser = formUser => dispatch => postUser(formUser)
   .then(
