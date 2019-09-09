@@ -4,7 +4,6 @@ class Signup extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      username: '',
       firstname: '',
       lastname: '',
       email: '',
@@ -106,7 +105,7 @@ class Signup extends React.Component {
     return (
       <ul>
         {this.props.errors.map((error, i) => (
-          <li key={`error-${i}`}>
+          <li key={i}>
             {error}
           </li>
         ))}
@@ -121,7 +120,6 @@ class Signup extends React.Component {
           <div className="auth-errors">
             {this.renderErrors()}
           </div>
-          <input placeholder="Username" className="form-input" type="text" value={this.state.username} onChange={this.update('username')} />
           <input placeholder="First Name" className="form-input" type="text" value={this.state.firstname} onChange={this.update('firstname')} />
           <input placeholder="Last Name" className="form-input" type="text" value={this.state.lastname} onChange={this.update('lastname')} />
           <input placeholder="Email" className="form-input" type="text" value={this.state.email} onChange={this.update('email')} />

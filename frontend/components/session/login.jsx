@@ -4,15 +4,16 @@ class Login extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      username: '',
+      email: '',
       password: '',
     };
-    this.handleClick = this.handleClick.bind(this);
+    this.handleDemoUser = this.handleDemoUser.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  handleClick () {
-    0;
+  handleDemoUser() {
+    this.props.login(this.props.demoUser)
+      .then(this.props.closeModal);
   }
 
   update(type) {
@@ -24,14 +25,13 @@ class Login extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     this.props.login(this.state)
-      .then(() => this.props.closeModal);
-    this.props.resetSessionErrors();
+      .then(this.props.closeModal);
   }
   renderErrors() {
     return (
       <ul>
         {this.props.errors.map((error, i) => (
-          <li key={`${i}`}>
+          <li key={i}>
             {error}
           </li>
         ))}
@@ -82,15 +82,15 @@ class Login extends React.Component {
       // this.createModal(this.createLoginForm())
       <div className="modal-screen">
         <form onSubmit={this.handleSubmit} className="modal-form">
-              <h1>Please sign in</h1><hr />
+          <h1>Please sign in</h1><hr />
           <div className="auth-errors">
             {this.renderErrors()}
           </div>
-            <input placeholder="Username " className="form-input" type="text" value={this.state.username} onChange={this.update('username')} />
-            <input placeholder="Password " className="form-input" type="password" value={this.state.password} onChange={this.update('password')} />
+          <input placeholder="Email " className="form-input" type="text" value={this.state.email} onChange={this.update('email')} />
+          <input placeholder="Password " className="form-input" type="password" value={this.state.password} onChange={this.update('password')} />
           <div className="submit">
             <input className="session-submit" type="submit" value="Sign In" />
-            <button onClick={this.handleClick} className="session-submit" >Demo User</button>
+            <button onClick={this.handleDemoUser} className="session-submit" >Demo User</button>
           </div>
           <div className="new-account">
             New to OpenRes? &nbsp;

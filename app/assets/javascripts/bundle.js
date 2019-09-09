@@ -728,15 +728,15 @@ function (_React$Component) {
           className: "nav-links"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", {
           className: "header-name"
-        }, "Hi, ", _this3.props.currentUser.username), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        }, "Hi, ", _this3.props.currentUser.firstname, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+          className: "arrow down fa fa-chevron-down",
           tabIndex: "0",
           ref: function ref(iconRef) {
             return _this3.iconRef = iconRef;
           },
-          className: "fa fa-chevron-down",
           onClick: _this3.toggleDropdown,
           onKeyUp: _this3.handleKeyUp
-        }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
+        })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
           ref: function ref(dropdownRef) {
             return _this3.dropdownRef = dropdownRef;
           },
@@ -751,10 +751,6 @@ function (_React$Component) {
           className: "go-to-profile",
           to: "/users/".concat(_this3.props.currentUser.id, "/profile")
         }, "Go to Profile")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
-          className: "drop-list-item"
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", null, "Accessibility Mode")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
-          className: "drop-list-item"
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", null, "Standard Style Mode")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
           className: "drop-list-item"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
           onClick: _this3.props.logout
@@ -891,18 +887,18 @@ function (_React$Component) {
 
     _this = _possibleConstructorReturn(this, _getPrototypeOf(Login).call(this, props));
     _this.state = {
-      username: '',
+      email: '',
       password: ''
     };
-    _this.handleClick = _this.handleClick.bind(_assertThisInitialized(_this));
+    _this.handleDemoUser = _this.handleDemoUser.bind(_assertThisInitialized(_this));
     _this.handleSubmit = _this.handleSubmit.bind(_assertThisInitialized(_this));
     return _this;
   }
 
   _createClass(Login, [{
-    key: "handleClick",
-    value: function handleClick() {
-      0;
+    key: "handleDemoUser",
+    value: function handleDemoUser() {
+      this.props.login(this.props.demoUser).then(this.props.closeModal);
     }
   }, {
     key: "update",
@@ -916,20 +912,15 @@ function (_React$Component) {
   }, {
     key: "handleSubmit",
     value: function handleSubmit(e) {
-      var _this3 = this;
-
       e.preventDefault();
-      this.props.login(this.state).then(function () {
-        return _this3.props.closeModal;
-      });
-      this.props.resetSessionErrors();
+      this.props.login(this.state).then(this.props.closeModal);
     }
   }, {
     key: "renderErrors",
     value: function renderErrors() {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, this.props.errors.map(function (error, i) {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
-          key: "".concat(i)
+          key: i
         }, error);
       }));
     }
@@ -976,11 +967,11 @@ function (_React$Component) {
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Please sign in"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("hr", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "auth-errors"
         }, this.renderErrors()), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-          placeholder: "Username ",
+          placeholder: "Email ",
           className: "form-input",
           type: "text",
-          value: this.state.username,
-          onChange: this.update('username')
+          value: this.state.email,
+          onChange: this.update('email')
         }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
           placeholder: "Password ",
           className: "form-input",
@@ -994,7 +985,7 @@ function (_React$Component) {
           type: "submit",
           value: "Sign In"
         }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-          onClick: this.handleClick,
+          onClick: this.handleDemoUser,
           className: "session-submit"
         }, "Demo User")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "new-account"
@@ -1040,7 +1031,9 @@ var mapStateToProps = function mapStateToProps(_ref) {
   return {
     errors: errors.session,
     demoUser: {
-      username: "tommy",
+      firstname: "tommy",
+      lastname: "deuk",
+      email: "tommy@looksgoodto.me",
       password: "hunter12"
     }
   };
@@ -1053,9 +1046,6 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
     },
     closeModal: function closeModal() {
       return dispatch(Object(_actions_modal_actions__WEBPACK_IMPORTED_MODULE_4__["closeModal"])());
-    },
-    resetSessionErrors: function resetSessionErrors() {
-      return dispatch(Object(_actions_session_action__WEBPACK_IMPORTED_MODULE_2__["resetSessionErrors"])());
     }
   };
 };
@@ -1109,7 +1099,6 @@ function (_React$Component) {
 
     _this = _possibleConstructorReturn(this, _getPrototypeOf(Signup).call(this, props));
     _this.state = {
-      username: '',
       firstname: '',
       lastname: '',
       email: '',
@@ -1207,7 +1196,7 @@ function (_React$Component) {
     value: function renderErrors() {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, this.props.errors.map(function (error, i) {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
-          key: "error-".concat(i)
+          key: i
         }, error);
       }));
     }
@@ -1222,12 +1211,6 @@ function (_React$Component) {
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Welcome to Ajar Tavern!"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "auth-errors"
       }, this.renderErrors()), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-        placeholder: "Username",
-        className: "form-input",
-        type: "text",
-        value: this.state.username,
-        onChange: this.update('username')
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         placeholder: "First Name",
         className: "form-input",
         type: "text",
