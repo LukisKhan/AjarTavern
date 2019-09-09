@@ -55,8 +55,7 @@ class Navbar extends React.Component {
       <span className="nav-links">
         <h3 className="header-name">Hi, {this.props.currentUser.firstname} 
           <i className="arrow down fa fa-chevron-down" tabIndex="0" ref={iconRef => this.iconRef = iconRef} onClick={this.toggleDropdown} onKeyUp={this.handleKeyUp}></i></h3>
-        {/* <i tabIndex="0" ref={iconRef => this.iconRef = iconRef} className="fa fa-chevron-down" onClick={this.toggleDropdown} onKeyUp={this.handleKeyUp}></i> */}
-        <ul ref={dropdownRef => this.dropdownRef = dropdownRef} id='dropdown' className={this.state.dropdown}>
+          <ul ref={dropdownRef => this.dropdownRef = dropdownRef} id='dropdown' className={this.state.dropdown}>
           <span className="li-cont">
             <li className="drop-list-item">
               <Link tabIndex="0" className="go-to-profile" to={`/users/${this.props.currentUser.id}/profile`}>Go to Profile</Link>

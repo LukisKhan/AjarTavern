@@ -117,13 +117,11 @@ class Signup extends React.Component {
       <div className="modal-screen">
         <form onSubmit={this.handleSubmit} className="modal-form">
           <h1>Welcome to Ajar Tavern!</h1>
-          <div className="auth-errors">
-            {this.renderErrors()}
-          </div>
           <input placeholder="First Name" className="form-input" type="text" value={this.state.firstname} onChange={this.update('firstname')} />
           <input placeholder="Last Name" className="form-input" type="text" value={this.state.lastname} onChange={this.update('lastname')} />
           <input placeholder="Email" className="form-input" type="text" value={this.state.email} onChange={this.update('email')} />
           <input placeholder="Password" className="form-input" type="password" value={this.state.password} onChange={this.update('password')} />
+          {this.renderErrors()}
           <div className="submit">
             <input className="session-submit" type="submit" value="Create Account" />
           </div>

@@ -1,13 +1,8 @@
 import React from 'react';
-import { Route } from 'react-router-dom';
-import HomeContainer from './home/home_container';
+import { Route, Link } from 'react-router-dom';
 import ModalContainer from './modal/modal_container';
 import NavbarContainer from './nav/navbar_container';
 export default () => {
-  let notLoggedIn;
-  if (!window.currentUser) {
-    notLoggedIn = <HomeContainer />
-  }
   const topbar = (<div className="topbar">
     <div className="rightbar">
       <span className="for-restuaranteurs">For Restuaranteurs</span>
@@ -43,11 +38,10 @@ export default () => {
       {topbar}
       <div className="nav-bar">
         <div className="nav-bar-left">
-          <nav className="logo"></nav>
+          <Link to="/"><nav className="logo"></nav></Link>
           <nav className="loc-dropdown"></nav>
         </div>
         <ModalContainer />
-        {/* {notLoggedIn} */}
         <NavbarContainer />
       </div>
 

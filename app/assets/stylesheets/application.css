@@ -90,6 +90,7 @@
    font-weight: 400;
    border-radius: 3px;
    border: none;
+   cursor: pointer;
  }
  #logInBtn {
   padding: 8px;
@@ -98,6 +99,7 @@
   font-weight: 500;
   border-radius: 5px;
   border: none;
+  cursor: pointer;
  }
 
 #signUpBtn:hover {

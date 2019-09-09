@@ -45,10 +45,12 @@
   background-color: #da3743;
   color: white;
   padding: 15px 0px;
-
   width: 396px;
-
 }
+.session-submit:hover {
+  background-color: #b5202a;
+}
+
 .session-submit::placeholder {
   color: white;
 }

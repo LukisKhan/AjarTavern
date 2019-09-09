@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import configureStore from './store/store';
 import Root from './components/root';
 //testing
-import { createNewUser, login, logout } from './actions/session_action';
+// import { createNewUser, login, logout } from './actions/session_action';
 //
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -24,31 +24,31 @@ document.addEventListener('DOMContentLoaded', () => {
   ReactDOM.render(<Root store={store} />, root);
 
 //testing
-  window.store = store;
-  window.createNewUser = createNewUser;
-  window.login = login;
-  window.logout = logout;
-  window.getState = store.getState;
-  window.dispatch = store.dispatch;
-  let modal = document.getElementById("signUpModal");
-  if (modal) {
-    configModal("signUp");
-    configModal("logIn");
-  }
+  // window.store = store;
+  // window.createNewUser = createNewUser;
+  // window.login = login;
+  // window.logout = logout;
+  // window.getState = store.getState;
+  // window.dispatch = store.dispatch;
+  // let modal = document.getElementById("signUpModal");
+  // if (modal) {
+  //   configModal("signUp");
+  //   configModal("logIn");
+  // }
 //testing
 })
 
-function configModal(type) {
-  let modal = document.getElementById(type+"Modal");
-  let btn = document.getElementById(type+"Btn");
-  let span = document.getElementsByClassName(type+"Close")[0];
-  btn.onclick = function () {
-    modal.style.display = "block";
-  }
-  span.onclick = function () {
-    modal.style.display = "none";
-  }
-}
+// function configModal(type) {
+//   let modal = document.getElementById(type+"Modal");
+//   let btn = document.getElementById(type+"Btn");
+//   let span = document.getElementsByClassName(type+"Close")[0];
+//   btn.onclick = function () {
+//     modal.style.display = "block";
+//   }
+//   span.onclick = function () {
+//     modal.style.display = "none";
+//   }
+// }
 
 
 // When the user clicks anywhere outside of the modal, close it

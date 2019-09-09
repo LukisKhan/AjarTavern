@@ -12,7 +12,7 @@ class Login extends React.Component {
   }
 
   handleDemoUser() {
-    this.props.login(this.props.demoUser)
+    this.props.login(this.props.user)
       .then(this.props.closeModal);
   }
 
@@ -22,8 +22,7 @@ class Login extends React.Component {
     };
   }
 
-  handleSubmit(e) {
-    e.preventDefault();
+  handleSubmit() {
     this.props.login(this.state)
       .then(this.props.closeModal);
   }
@@ -83,15 +82,13 @@ class Login extends React.Component {
       <div className="modal-screen">
         <form onSubmit={this.handleSubmit} className="modal-form">
           <h1>Please sign in</h1><hr />
-          <div className="auth-errors">
-            {this.renderErrors()}
-          </div>
+          {this.renderErrors()}
           <input placeholder="Email " className="form-input" type="text" value={this.state.email} onChange={this.update('email')} />
           <input placeholder="Password " className="form-input" type="password" value={this.state.password} onChange={this.update('password')} />
           <div className="submit">
             <input className="session-submit" type="submit" value="Sign In" />
-            <button onClick={this.handleDemoUser} className="session-submit" >Demo User</button>
           </div>
+          <button onClick={this.handleDemoUser} className="session-submit" >Demo User</button>
           <div>
             <a href="#">Create an account</a>
           </div>

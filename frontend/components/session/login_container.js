@@ -8,7 +8,7 @@ import { openModal, closeModal } from '../../actions/modal_actions';
 const mapStateToProps = ({ errors }) => {
   return {
     errors: errors.session,
-    demoUser: { firstname: "tommy", lastname: "deuk", email: "tommy@looksgoodto.me", password: "hunter12" }
+    user: { firstname: "tommy", lastname: "deuk", email: "tommy@looksgoodto.me", password: "hunter12" }
   };
 };
 
