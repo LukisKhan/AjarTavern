@@ -11,8 +11,10 @@ class Login extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  handleDemoUser() {
-    this.props.login(this.props.user)
+  handleDemoUser(e) {
+    e.preventDefault();
+    let user = this.props.user;
+    this.props.login(user)
       .then(this.props.closeModal);
   }
 
@@ -22,7 +24,8 @@ class Login extends React.Component {
     };
   }
 
-  handleSubmit() {
+  handleSubmit(e) {
+    e.preventDefault();
     this.props.login(this.state)
       .then(this.props.closeModal);
   }
@@ -62,7 +65,6 @@ class Login extends React.Component {
               onChange={this.handleInput('username')}
             />
           </label>
-
           <label>Password:
           <input
               type="password"

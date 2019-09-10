@@ -287,7 +287,8 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-/* harmony default export */ __webpack_exports__["default"] = (function () {
+
+var Main = function Main() {
   var topbar = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "topbar"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -368,6 +369,16 @@ __webpack_require__.r(__webpack_exports__);
     name: "search-field",
     id: ""
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", null, "Let's Go")));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (function () {
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Switch"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
+    exact: true,
+    path: "/",
+    component: Main
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Redirect"], {
+    to: "/"
+  }));
 });
 
 /***/ }),
@@ -601,7 +612,6 @@ function (_React$Component) {
           className: "header-name"
         }, "Hi, ", _this3.props.currentUser.firstname, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
           className: "arrow down fa fa-chevron-down",
-          tabIndex: "0",
           ref: function ref(iconRef) {
             return _this3.iconRef = iconRef;
           },
@@ -614,11 +624,10 @@ function (_React$Component) {
           id: "dropdown",
           className: _this3.state.dropdown
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-          className: "li-cont"
+          className: "dropdown-items"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
           className: "drop-list-item"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
-          tabIndex: "0",
           className: "go-to-profile",
           to: "/users/".concat(_this3.props.currentUser.id, "/profile")
         }, "Go to Profile")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
@@ -768,8 +777,10 @@ function (_React$Component) {
 
   _createClass(Login, [{
     key: "handleDemoUser",
-    value: function handleDemoUser() {
-      this.props.login(this.props.user).then(this.props.closeModal);
+    value: function handleDemoUser(e) {
+      e.preventDefault();
+      var user = this.props.user;
+      this.props.login(user).then(this.props.closeModal);
     }
   }, {
     key: "update",
@@ -782,7 +793,8 @@ function (_React$Component) {
     }
   }, {
     key: "handleSubmit",
-    value: function handleSubmit() {
+    value: function handleSubmit(e) {
+      e.preventDefault();
       this.props.login(this.state).then(this.props.closeModal);
     }
   }, {
@@ -1267,6 +1279,8 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _actions_session_action__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../actions/session_action */ "./frontend/actions/session_action.js");
+/* harmony import */ var _actions_modal_actions__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../actions/modal_actions */ "./frontend/actions/modal_actions.js");
+
 
 /* harmony default export */ __webpack_exports__["default"] = (function () {
   var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : [];
@@ -1280,7 +1294,7 @@ __webpack_require__.r(__webpack_exports__);
     case _actions_session_action__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_CURRENT_USER"]:
       return [];
 
-    case 'RESET_SESSION_ERRORS':
+    case _actions_modal_actions__WEBPACK_IMPORTED_MODULE_1__["OPEN_MODAL"]:
       return [];
 
     default:

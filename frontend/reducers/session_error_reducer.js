@@ -1,4 +1,5 @@
 import { RECEIVE_SESSION_ERRORS, RECEIVE_CURRENT_USER } from '../actions/session_action';
+import { OPEN_MODAL } from '../actions/modal_actions';
 
 export default (state = [], action) => {
   Object.freeze(state);
@@ -7,7 +8,7 @@ export default (state = [], action) => {
       return action.errors;
     case RECEIVE_CURRENT_USER:
       return [];
-    case 'RESET_SESSION_ERRORS':
+    case OPEN_MODAL:
       return [];
     default:
       return state;

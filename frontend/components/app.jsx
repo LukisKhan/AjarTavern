@@ -1,8 +1,11 @@
 import React from 'react';
-import { Route, Link } from 'react-router-dom';
+import { Route, Link, Switch, Redirect } from 'react-router-dom';
 import ModalContainer from './modal/modal_container';
 import NavbarContainer from './nav/navbar_container';
-export default () => {
+const Main = () => {
+
+
+
   const topbar = (<div className="topbar">
     <div className="rightbar">
       <span className="for-restuaranteurs">For Restuaranteurs</span>
@@ -44,7 +47,6 @@ export default () => {
         <ModalContainer />
         <NavbarContainer />
       </div>
-
       <div className="restaurant-search-box">
         <div className="search-options">
           <input type="date" id="start" name="booking-date"
@@ -55,7 +57,17 @@ export default () => {
         <input type="text" name="search-field" id=""/>
         <button>Let's Go</button>
       </div>
-      
+
+
     </div>
   );
+}
+
+export default () => {
+  return (
+    <Switch>
+      <Route exact path="/" component={Main} />
+      <Redirect to="/" />
+    </Switch>
+  )
 }
