@@ -3,9 +3,6 @@ import { Route, Link, Switch, Redirect } from 'react-router-dom';
 import ModalContainer from './modal/modal_container';
 import NavbarContainer from './nav/navbar_container';
 const Main = () => {
-
-
-
   const topbar = (<div className="topbar">
     <div className="rightbar">
       <span className="for-restuaranteurs">For Restuaranteurs</span>
