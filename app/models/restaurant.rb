@@ -6,4 +6,4 @@ class Restaurant < ApplicationRecord
     :lng, presence: true
 
   has_one_attached :photo
-endc
+end

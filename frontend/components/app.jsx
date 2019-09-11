@@ -2,6 +2,8 @@ import React from 'react';
 import { Route, Link, Switch, Redirect } from 'react-router-dom';
 import ModalContainer from './modal/modal_container';
 import NavbarContainer from './nav/navbar_container';
+import RestaurantShowContainer from './restaurants/restaurant_show_container';
+
 const Main = () => {
   const topbar = (<div className="topbar">
     <div className="rightbar">
@@ -54,7 +56,7 @@ const Main = () => {
         <input type="text" name="search-field" id=""/>
         <button>Let's Go</button>
       </div>
-
+      <Link to="/restaurants/1">First Restaurant</Link>
 
     </div>
   );
@@ -64,6 +66,7 @@ export default () => {
   return (
     <Switch>
       <Route exact path="/" component={Main} />
+      <Route exact path="/restaurants/:restaurantId" component={RestaurantShowContainer} />
       <Redirect to="/" />
     </Switch>
   )

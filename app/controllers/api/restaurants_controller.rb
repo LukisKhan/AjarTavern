@@ -8,11 +8,11 @@ class Api::RestaurantsController < ApplicationController
     render :show
   end
   def create
-    restaurant = Restaurant.new(restaurant_params)
-    if restaurant.save
-      render json {message: "You did it"}
+    @restaurant = Restaurant.new(restaurant_params)
+    if @restaurant.save
+      render :show
     else
-      render json: restaurant.errors.full_messages
+      render json: @restaurant.errors.full_messages, status: 422
     end
   end
   private
