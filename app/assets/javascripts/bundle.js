@@ -140,7 +140,8 @@ var receiveRestaurants = function receiveRestaurants(restaurants) {
     restaurants: restaurants
   };
 };
-var receiveRestaurant = function receiveRestaurant(restaurant) {
+var receiveRestaurant = function receiveRestaurant(_ref) {
+  var restaurant = _ref.restaurant;
   return {
     type: RECEIVE_RESTAURANT,
     restaurant: restaurant
@@ -835,15 +836,20 @@ function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
-      var restaurant = this.props;
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "restaurant-show"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-        src: restaurant.photoUrl,
-        alt: restaurant.name
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_restaurant_detail__WEBPACK_IMPORTED_MODULE_1__["default"], {
-        restaurant: restaurant
-      }), "This is restaurant show");
+      var restaurant = this.props.restaurant;
+
+      if (restaurant) {
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "restaurant-show"
+        }, restaurant.name, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+          src: restaurant.photoUrl,
+          alt: restaurant.name
+        }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_restaurant_detail__WEBPACK_IMPORTED_MODULE_1__["default"], {
+          restaurant: restaurant
+        }));
+      } else {
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "Loading Restaurant");
+      }
     }
   }]);
 

@@ -11,14 +11,22 @@ class RestaurantShow extends React.Component {
     }
   }
   render() {
-    const restaurant = this.props;
-    return (
-      <div className="restaurant-show">
-        <img src={restaurant.photoUrl} alt={restaurant.name}/>
-        <RestaurantDetail restaurant={restaurant} />
-        This is restaurant show
-      </div>
-    )
+    const restaurant = this.props.restaurant;
+    if (restaurant) {
+      return (
+        <div className="restaurant-show">
+          {restaurant.name}
+          <img src={restaurant.photoUrl} alt={restaurant.name}/>
+          <RestaurantDetail restaurant={restaurant} />
+        </div>
+      )
+    } else {
+      return (
+        <div>
+          Loading Restaurant
+        </div>
+      )
+    }
   }
 }
 export default RestaurantShow;
