@@ -7,7 +7,7 @@ export const receiveRestaurants = restaurants => ({
   type: RECEIVE_RESTAURANTS,
   restaurants: restaurants
 });
-export const receiveRestaurants = restaurant => ({
+export const receiveRestaurant = restaurant => ({
   type: RECEIVE_RESTAURANT,
   restaurant: restaurant
 });

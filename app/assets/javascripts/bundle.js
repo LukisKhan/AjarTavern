@@ -115,6 +115,54 @@ var closeModal = function closeModal() {
 
 /***/ }),
 
+/***/ "./frontend/actions/restaurant_actions.js":
+/*!************************************************!*\
+  !*** ./frontend/actions/restaurant_actions.js ***!
+  \************************************************/
+/*! exports provided: RECEIVE_RESTAURANTS, RECEIVE_RESTAURANT, receiveRestaurants, receiveRestaurant, fetchRestaurants, fetchRestaurant */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RECEIVE_RESTAURANTS", function() { return RECEIVE_RESTAURANTS; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RECEIVE_RESTAURANT", function() { return RECEIVE_RESTAURANT; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "receiveRestaurants", function() { return receiveRestaurants; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "receiveRestaurant", function() { return receiveRestaurant; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchRestaurants", function() { return fetchRestaurants; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchRestaurant", function() { return fetchRestaurant; });
+/* harmony import */ var _utils_restaurant_util__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../utils/restaurant_util */ "./frontend/utils/restaurant_util.js");
+
+var RECEIVE_RESTAURANTS = 'RECEIVE_RESTAURANTS';
+var RECEIVE_RESTAURANT = 'RECEIVE_RESTAURANT';
+var receiveRestaurants = function receiveRestaurants(restaurants) {
+  return {
+    type: RECEIVE_RESTAURANTS,
+    restaurants: restaurants
+  };
+};
+var receiveRestaurant = function receiveRestaurant(restaurant) {
+  return {
+    type: RECEIVE_RESTAURANT,
+    restaurant: restaurant
+  };
+};
+var fetchRestaurants = function fetchRestaurants() {
+  return function (dispatch) {
+    return _utils_restaurant_util__WEBPACK_IMPORTED_MODULE_0__["fetchRestaurants"]().then(function (res) {
+      return dispatch(receiveRestaurants(res));
+    });
+  };
+};
+var fetchRestaurant = function fetchRestaurant(id) {
+  return function (dispatch) {
+    return _utils_restaurant_util__WEBPACK_IMPORTED_MODULE_0__["fetchRestaurant"](id).then(function (res) {
+      return dispatch(receiveRestaurant(res));
+    });
+  };
+};
+
+/***/ }),
+
 /***/ "./frontend/actions/session_action.js":
 /*!********************************************!*\
   !*** ./frontend/actions/session_action.js ***!
@@ -1183,10 +1231,13 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var redux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! redux */ "./node_modules/redux/es/redux.js");
 /* harmony import */ var _users_reducer__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./users_reducer */ "./frontend/reducers/users_reducer.js");
+/* harmony import */ var _restaurants_reducer__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./restaurants_reducer */ "./frontend/reducers/restaurants_reducer.js");
+
 
 
 /* harmony default export */ __webpack_exports__["default"] = (Object(redux__WEBPACK_IMPORTED_MODULE_0__["combineReducers"])({
-  users: _users_reducer__WEBPACK_IMPORTED_MODULE_1__["default"]
+  users: _users_reducer__WEBPACK_IMPORTED_MODULE_1__["default"],
+  restaurants: _restaurants_reducer__WEBPACK_IMPORTED_MODULE_2__["default"]
 }));
 
 /***/ }),
@@ -1238,6 +1289,41 @@ function modalReducer() {
       return state;
   }
 }
+
+/***/ }),
+
+/***/ "./frontend/reducers/restaurants_reducer.js":
+/*!**************************************************!*\
+  !*** ./frontend/reducers/restaurants_reducer.js ***!
+  \**************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _actions_restaurant_actions__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../actions/restaurant_actions */ "./frontend/actions/restaurant_actions.js");
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+
+
+var restaurantReducer = function restaurantReducer() {
+  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+  var action = arguments.length > 1 ? arguments[1] : undefined;
+  Object.freeze(state);
+
+  switch (action.type) {
+    case _actions_restaurant_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_RESTAURANTS"]:
+      return Object.assign({}, action.restaurants);
+
+    case _actions_restaurant_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_RESTAURANT"]:
+      return Object.assign({}, state, _defineProperty({}, action.restaurant.id, action.restaurant));
+
+    default:
+      return state;
+  }
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (restaurantReducer);
 
 /***/ }),
 
@@ -1412,6 +1498,33 @@ __webpack_require__.r(__webpack_exports__);
   var preloadedState = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
   return Object(redux__WEBPACK_IMPORTED_MODULE_0__["createStore"])(_reducers_root_reducer__WEBPACK_IMPORTED_MODULE_2__["default"], preloadedState, Object(redux__WEBPACK_IMPORTED_MODULE_0__["applyMiddleware"])(redux_thunk__WEBPACK_IMPORTED_MODULE_3__["default"], redux_logger__WEBPACK_IMPORTED_MODULE_1___default.a));
 });
+
+/***/ }),
+
+/***/ "./frontend/utils/restaurant_util.js":
+/*!*******************************************!*\
+  !*** ./frontend/utils/restaurant_util.js ***!
+  \*******************************************/
+/*! exports provided: fetchRestaurants, fetchRestaurant */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchRestaurants", function() { return fetchRestaurants; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchRestaurant", function() { return fetchRestaurant; });
+var fetchRestaurants = function fetchRestaurants(data) {
+  return $.ajax({
+    method: 'GET',
+    url: 'api/restaurants',
+    data: data
+  });
+};
+var fetchRestaurant = function fetchRestaurant(id) {
+  return $.ajax({
+    method: 'GET',
+    url: 'api/restaurants/' + id
+  });
+};
 
 /***/ }),
 
