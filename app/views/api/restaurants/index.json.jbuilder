@@ -1,4 +1,5 @@
-json.array! @restaurants do |restaurant|
-  json.extract! restaurant, :id, :name
-  json.photoUrl url_for(restaurant.photo)
+@restaurants.each do |restaurant|
+    json.set! restaurant.id do 
+        json.partial! 'restaurant', restaurant: restaurant
+    end
 end
