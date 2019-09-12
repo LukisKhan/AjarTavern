@@ -14,5 +14,17 @@ User.create(firstname: "andy", lastname: "wynhoop", email: "andy@looksgoodto.me"
 User.create(firstname: "luke", lastname: "pham", email: "luke@looksgoodto.me", password: "hunter12");
 
 rest1 = Restaurant.create(name:"Pho Doan", address:"123 st", phone_num:"555-555", lat: 1.111, lng: 1.222);
-file = open('https://full-stacks-lp-aa-dev.s3.us-east-2.amazonaws.com/dong_que.jpeg')
-rest1.photo.attach(io: file, filename: "restpic")
+file1 = open('https://full-stacks-lp-aa-dev.s3.us-east-2.amazonaws.com/pho_doan.jpeg')
+rest1.photo.attach(io: file1, filename: "rest1pic")
+
+rest2 = Restaurant.create(name:"Dong Que", address:"123 st", phone_num:"555-555", lat: 1.111, lng: 1.222);
+file2 = open('https://full-stacks-lp-aa-dev.s3.us-east-2.amazonaws.com/dong_que.jpeg')
+rest2.photo.attach(io: file2, filename: "rest2pic")
+
+rest3 = Restaurant.create(name:"Nam Hua", address:"123 st", phone_num:"555-555", lat: 1.111, lng: 1.222);
+file3 = open('https://full-stacks-lp-aa-dev.s3.us-east-2.amazonaws.com/nam_hua.jpg')
+rest3.photo.attach(io: file3, filename: "rest3pic")
+
+rest4 = Restaurant.create(name:"Pho Bang", address:"123 st", phone_num:"555-555", lat: 1.111, lng: 1.222);
+file4 = open('https://full-stacks-lp-aa-dev.s3.us-east-2.amazonaws.com/pho_bang.jpeg')
+rest4.photo.attach(io: file4, filename: "rest4pic")
