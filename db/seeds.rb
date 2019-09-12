@@ -10,3 +10,4 @@ User.create(firstname: "tommy", lastname: "deuk", email: "tommy@looksgoodto.me",
 User.create(firstname: "andy", lastname: "wynhoop", email: "andy@looksgoodto.me", password: "hunter12");
 User.create(firstname: "luke", lastname: "pham", email: "luke@looksgoodto.me", password: "hunter12");
 
+Restaurant.create(name:"Pho Doan", address:"123 st", phone_num:"555-555", lat: 1.111, lng: 1.222);
