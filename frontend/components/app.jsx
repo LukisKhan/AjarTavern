@@ -66,6 +66,7 @@ export default () => {
   return (
     <Switch>
       <Route exact path="/" component={Main} />
+      <Route exact path="/restaurants/:restaurantId" component={RestaurantShowContainer} />
       <Redirect to="/" />
     </Switch>
   )
