@@ -56,7 +56,7 @@ const Main = () => {
         <input type="text" name="search-field" id=""/>
         <button>Let's Go</button>
       </div>
-      <Link to="/restaurants/3">First test Restaurant</Link>
+      <Link to="/restaurants/5">First test Restaurant</Link>
 
     </div>
   );

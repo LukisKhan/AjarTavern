@@ -15,7 +15,7 @@ class RestaurantShow extends React.Component {
     if (restaurant) {
       return (
         <div className="restaurant-show">
-          {restaurant.name}
+          1
           <img src={restaurant.photoUrl} alt={restaurant.name}/>
           <RestaurantDetail restaurant={restaurant} />
         </div>

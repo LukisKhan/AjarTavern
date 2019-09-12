@@ -420,7 +420,7 @@ var Main = function Main() {
     name: "search-field",
     id: ""
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", null, "Let's Go")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
-    to: "/restaurants/3"
+    to: "/restaurants/5"
   }, "First test Restaurant"));
 };
 
@@ -768,7 +768,7 @@ var RestaurantDetail = function RestaurantDetail(_ref) {
   var restaurant = _ref.restaurant;
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "restaurant-detail"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, restaurant.name), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, restaurant.name), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "Address: ", restaurant.address), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "Phone Number: ", restaurant.phone_num), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "Lat: ", restaurant.lat), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "Lng: ", restaurant.lng), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
     to: "/"
   }, "Homepage"));
 };
@@ -841,7 +841,7 @@ function (_React$Component) {
       if (restaurant) {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "restaurant-show"
-        }, restaurant.name, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        }, "1", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
           src: restaurant.photoUrl,
           alt: restaurant.name
         }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_restaurant_detail__WEBPACK_IMPORTED_MODULE_1__["default"], {
