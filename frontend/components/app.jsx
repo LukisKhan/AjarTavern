@@ -3,6 +3,7 @@ import { Route, Link, Switch, Redirect } from 'react-router-dom';
 import ModalContainer from './modal/modal_container';
 import NavbarContainer from './nav/navbar_container';
 import RestaurantShowContainer from './restaurants/restaurant_show_container';
+import MainContentContainer from './main_content/main_content_container';
 
 const Main = () => {
   const topbar = (<div className="topbar">
@@ -57,7 +58,7 @@ const Main = () => {
         <button>Let's Go</button>
       </div>
       <Link to="/restaurants/5">First test Restaurant</Link>
-
+      <MainContentContainer />
     </div>
   );
 }
