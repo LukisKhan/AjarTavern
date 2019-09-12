@@ -421,9 +421,7 @@ var Main = function Main() {
     type: "text",
     name: "search-field",
     id: ""
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", null, "Let's Go")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
-    to: "/restaurants/5"
-  }, "First test Restaurant"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_main_content_main_content_container__WEBPACK_IMPORTED_MODULE_5__["default"], null));
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", null, "Let's Go")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_main_content_main_content_container__WEBPACK_IMPORTED_MODULE_5__["default"], null));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (function () {
@@ -568,7 +566,10 @@ var MainContentDetail = function MainContentDetail(_ref) {
   var restaurant = _ref.restaurant;
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
     to: "/restaurants/".concat(restaurant.id)
-  }, restaurant.name));
+  }, restaurant.name), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+    src: restaurant.photoUrl,
+    alt: restaurant.name
+  }));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (MainContentDetail);

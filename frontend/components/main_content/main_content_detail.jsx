@@ -7,6 +7,7 @@ const MainContentDetail = ({restaurant}) => {
       <Link to={`/restaurants/${restaurant.id}`}>
         {restaurant.name}
       </Link>
+      <img src={restaurant.photoUrl} alt={restaurant.name} />
     </li>
   );
 }
