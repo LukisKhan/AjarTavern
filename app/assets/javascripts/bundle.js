@@ -420,8 +420,8 @@ var Main = function Main() {
     name: "search-field",
     id: ""
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", null, "Let's Go")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
-    to: "/restaurants/5"
-  }, "First Restaurant"));
+    to: "/restaurants/3"
+  }, "First test Restaurant"));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (function () {
