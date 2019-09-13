@@ -10,13 +10,15 @@ class MainContent extends React.Component {
     if (this.props.restaurants) {
       restaurants = this.props.restaurants.map(
         restaurant => {
-          return <MainContentDetail restaurant={restaurant} />
+          return <MainContentDetail key={restaurant.name} restaurant={restaurant} />
         }
       )
     }
     return (
-      <div>
-        <ul>
+      <div className="main-content-root">
+        <h2>Featured Restaurants</h2>
+        <hr />
+        <ul className="restaurants-section-ul">
           {restaurants}
         </ul>
       </div>

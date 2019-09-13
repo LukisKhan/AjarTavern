@@ -39,25 +39,28 @@ const Main = () => {
   return (
     <div>
       {topbar}
-      <div className="nav-bar">
-        <div className="nav-bar-left">
-          <Link to="/"><nav className="logo"></nav></Link>
-          <nav className="loc-dropdown"></nav>
+      <div className="app-root">
+        <div className="nav-bar">
+          <div className="nav-bar-left">
+            <Link to="/"><nav className="logo"></nav></Link>
+            <nav className="loc-dropdown"></nav>
+          </div>
+          <ModalContainer />
+          <NavbarContainer />
         </div>
-        <ModalContainer />
-        <NavbarContainer />
-      </div>
-      <div className="restaurant-search-box">
-        <div className="search-options">
-          <input type="date" id="start" name="booking-date"
-            min="2019-01-01" max="2019-12-31" />
-          {selectTime}
-          {selectNumGuest}
+        <div className="bg"></div>
+        <div className="restaurant-search-box">
+          <div className="search-options">
+            <input type="date" id="start" name="booking-date"
+              min="2019-01-01" max="2019-12-31" />
+            {selectTime}
+            {selectNumGuest}
+          </div>
+          <input type="text" name="search-field" id=""/>
+          <button>Let's Go</button>
         </div>
-        <input type="text" name="search-field" id=""/>
-        <button>Let's Go</button>
+        <MainContentContainer />
       </div>
-      <MainContentContainer />
     </div>
   );
 }

@@ -398,6 +398,8 @@ var Main = function Main() {
     value: "10"
   }, "10"));
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, topbar, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "app-root"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "nav-bar"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "nav-bar-left"
@@ -408,6 +410,8 @@ var Main = function Main() {
   })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("nav", {
     className: "loc-dropdown"
   })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_modal_modal_container__WEBPACK_IMPORTED_MODULE_2__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_nav_navbar_container__WEBPACK_IMPORTED_MODULE_3__["default"], null)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "bg"
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "restaurant-search-box"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "search-options"
@@ -421,7 +425,7 @@ var Main = function Main() {
     type: "text",
     name: "search-field",
     id: ""
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", null, "Let's Go")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_main_content_main_content_container__WEBPACK_IMPORTED_MODULE_5__["default"], null));
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", null, "Let's Go")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_main_content_main_content_container__WEBPACK_IMPORTED_MODULE_5__["default"], null)));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (function () {
@@ -497,12 +501,17 @@ function (_React$Component) {
       if (this.props.restaurants) {
         restaurants = this.props.restaurants.map(function (restaurant) {
           return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_main_content_main_content_detail__WEBPACK_IMPORTED_MODULE_1__["default"], {
+            key: restaurant.name,
             restaurant: restaurant
           });
         });
       }
 
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, restaurants));
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "main-content-root"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Featured Restaurants"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("hr", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
+        className: "restaurants-section-ul"
+      }, restaurants));
     }
   }]);
 
@@ -564,12 +573,18 @@ __webpack_require__.r(__webpack_exports__);
 
 var MainContentDetail = function MainContentDetail(_ref) {
   var restaurant = _ref.restaurant;
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+    className: "restaurant-box"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+    className: "restaurant-link",
     to: "/restaurants/".concat(restaurant.id)
-  }, restaurant.name), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+    className: "restaurant-img",
     src: restaurant.photoUrl,
     alt: restaurant.name
-  }));
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "restaurant-name"
+  }, restaurant.name)));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (MainContentDetail);
