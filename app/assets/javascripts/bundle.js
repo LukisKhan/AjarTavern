@@ -1009,7 +1009,21 @@ function (_React$Component) {
           className: "additional-section"
         }, "Additional Section", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "booking-section"
-        }, "booking sub-section"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        }, "Make A Reservation", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("select", {
+          name: "",
+          id: ""
+        }, "Party Size", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+          value: ""
+        }, "1"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+          value: ""
+        }, "2")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "Date"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("select", {
+          name: "",
+          id: ""
+        }, "Time", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+          value: ""
+        }, "1"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+          value: ""
+        }, "2")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", null, "Find a Table")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "location-section"
         }, "map sub-section"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "atmosphere-section"
