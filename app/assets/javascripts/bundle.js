@@ -992,12 +992,26 @@ function (_React$Component) {
       if (restaurant) {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "restaurant-show"
-        }, "1", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "banner-section"
+        }, "Banner", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
           src: restaurant.photoUrl,
           alt: restaurant.name
-        }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_restaurant_detail__WEBPACK_IMPORTED_MODULE_1__["default"], {
+        })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "restaurant-flexbox"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "restaurant-section"
+        }, "Restaurant section", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_restaurant_detail__WEBPACK_IMPORTED_MODULE_1__["default"], {
           restaurant: restaurant
-        }));
+        })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "additional-section"
+        }, "Location and additional", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "booking-section"
+        }, "Booking Section"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "location-section"
+        }, "map sub-section"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "atmosphere-section"
+        }, "atmosphere sub-section"))));
       } else {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "Loading Restaurant");
       }

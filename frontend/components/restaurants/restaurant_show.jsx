@@ -15,9 +15,29 @@ class RestaurantShow extends React.Component {
     if (restaurant) {
       return (
         <div className="restaurant-show">
-          1
-          <img src={restaurant.photoUrl} alt={restaurant.name}/>
-          <RestaurantDetail restaurant={restaurant} />
+
+          <div className="banner-section">Banner
+            <img src={restaurant.photoUrl} alt={restaurant.name}/>
+          </div>
+          <div className="restaurant-flexbox">
+            <div className="restaurant-section">Restaurant section
+              <RestaurantDetail restaurant={restaurant} />
+            </div>
+
+            <div className="additional-section">Location and additional
+              <div className="booking-section">Booking Section
+        
+              </div>
+              <div className="location-section">map sub-section
+        
+              </div>
+              <div className="atmosphere-section">atmosphere sub-section
+
+              </div>
+      
+            </div>
+          </div>
+
         </div>
       )
     } else {
