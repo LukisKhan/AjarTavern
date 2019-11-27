@@ -30,18 +30,21 @@ class RestaurantShow extends React.Component {
               </ul>
               <RestaurantDetail restaurant={restaurant} />
             </div>
-            <div className="additional-section">Additional Section
+            <div className="additional-section">
               <div className="booking-section">Make A Reservation
-                <select name="" id="">Party Size
+                <div className="party-size-label">Party Size</div>
+                <select name="" id="">
                   <option value="">1</option>
                   <option value="">2</option>
                 </select>
                 <div>Date</div>
-                <select name="" id="">Time
+                <div className="time-label">Time</div>
+                <select name="" id="">
                   <option value="">1</option>
                   <option value="">2</option>
                 </select>
-                <button>Find a Table</button>
+                <div></div>
+                <button className="session-submit">Find a Table</button>
               </div>
               <div className="location-section">map sub-section
         

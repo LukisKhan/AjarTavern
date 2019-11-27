@@ -15,16 +15,18 @@ body {
   justify-content: space-between;
   width: 85vw;
   margin: auto;
+  position: relative;
+  bottom: 48px;
 }
 .banner-section {
   background: pink;
 }
 .restaurant-section {
   width: 56vw;
-  border: 1px solid black;
 }
 .restaurant-detail div {
-  height: 40px;
+  border: 1px transparent black;
+  padding: 3px;
 }
 .restaurant-top-bar{
   height: 48px;
@@ -32,6 +34,7 @@ body {
   background-color: #fff;
   border-radius: 2px 2px 0 0;
   padding: 0 .5rem;
+  margin-top: 0px;
   display: flex;
   box-sizing: border-box;
   position: sticky;
@@ -44,7 +47,9 @@ body {
 }
 .additional-section{
   width: 25vw;
-  border: 1px solid green;
+}
+.additional-section > div {
+  height: 30vh;
 }
 .booking-section {
   background: #fff;
