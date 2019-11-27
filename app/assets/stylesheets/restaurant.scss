@@ -1,11 +1,48 @@
+body {
+  width: 100vw;
+  margin: 0px;
+  padding: 0px;
+}
 .restaurant-show img{
   width: 100vw;
   height: 45vh;
   object-fit: cover;
+  margin: 0px;
+  padding: 0px;
 }
 .restaurant-flexbox {
   display: flex;
+  justify-content: space-between;
+  width: 85vw;
+  margin: auto;
 }
 .banner-section {
   background: pink;
+}
+.restaurant-section {
+  width: 56vw;
+  border: 1px solid black;
+}
+.restaurant-detail div {
+  height: 40px;
+}
+.restaurant-top-bar{
+  height: 48px;
+  list-style: none;
+  background-color: #fff;
+  border-radius: 2px 2px 0 0;
+  padding: 0 .5rem;
+  display: flex;
+  box-sizing: border-box;
+  position: sticky;
+  top: 0;
+  border-bottom: 1px solid rgb(202, 192, 192);
+}
+.restaurant-top-bar li {
+  padding: 10px;
+  font-size: 18px;
+}
+.additional-section{
+  width: 25vw;
+  border: 1px solid green;
 }
