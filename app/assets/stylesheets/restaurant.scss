@@ -10,7 +10,20 @@ body {
   margin: 0px;
   padding: 0px;
 }
+///Restaurant description Section
 
+.restaurant-title {
+  font-size: 70px;
+  font-weight: bold;
+  border-bottom: 1px solid rgb(202, 192, 192);
+  padding: 30px 0px;
+}
+.description {
+  font-size: 20px;
+}
+.description div{
+  padding: 5px;
+}
 /////PHOTO SECTION
 .photos {
   display: block;
@@ -37,7 +50,7 @@ body {
 }
 
 #larger-photo {
-  width: 49%;
+  width: 42%;
   height: 98.5%;
 }
 ////MENU SECTION
@@ -61,6 +74,30 @@ body {
   border: 1px solid gray;
   margin: 8px;
 }
+////REVIEW SECTION
+.review {
+  display: block;
+}
+.review-subtitle {
+  font-size: 20px;
+  border-bottom: 1px solid rgb(202, 192, 192);
+  border-top: 1px solid rgb(202, 192, 192);
+}
+.review-box {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  padding: 3px;
+  padding-inline-start: 40px;
+  font-size: 20px;
+}
+.review-overall {
+  font-weight: 600;
+}
+.review-box li {
+  border-bottom: 1px solid rgb(202, 192, 192);
+}
+
 
 /////PAGE FLEX BOX
 .restaurant-flexbox {
@@ -69,24 +106,21 @@ body {
   width: 85vw;
   margin: auto;
   position: relative;
-  bottom: 48px;
+  bottom: 53px;
 }
 .banner-section {
-  background: pink;
+  background: white;
 }
 .restaurant-section {
   width: 56vw;
 }
-.restaurant-detail div {
-  border: 1px transparent black;
-  padding: 3px;
-}
+////Restaurant top bar
 .restaurant-top-bar{
   height: 48px;
   list-style: none;
   background-color: #fff;
   border-radius: 2px 2px 0 0;
-  padding: 0 .5rem;
+  padding: 0px;
   margin-top: 0px;
   display: flex;
   box-sizing: border-box;
@@ -98,14 +132,46 @@ body {
   padding: 10px;
   font-size: 18px;
 }
+//RIGHT SIDED BOXES
 .additional-section{
   width: 25vw;
 }
 .additional-section > div {
-  height: 30vh;
+  height: 45vh;
 }
+////BOOKING SECTION
 .booking-section {
   background: #fff;
   position: sticky;
   top: 0;
+  padding: 0px 15px 15px 15px;
+}
+.booking-section > div {
+  padding: 10px;
+}
+.booking-title {
+  font-size: 25px;
+  text-align: center;
+  border-bottom: 1px solid rgb(202, 192, 192);
+}
+.party-size{
+  font-size: 20px;
+  border-bottom: 1px solid rgb(202, 192, 192);
+}
+select {
+  font-size: 15px;
+}
+.date-time-section {
+  display: flex;
+  justify-content: space-between;
+}
+.date-time-section > div {
+  font-size: 20px;
+  border-bottom: 1px solid rgb(202, 192, 192);
+  padding-bottom: 10px;
+  width: 48%;
+
+/////LOCATION SECTION
+
+/////ATMOSPHERE SECTION
 }

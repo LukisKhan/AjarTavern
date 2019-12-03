@@ -31,19 +31,31 @@ class RestaurantShow extends React.Component {
               <RestaurantDetail restaurant={restaurant} />
             </div>
             <div className="additional-section">
-              <div className="booking-section">Make A Reservation
-                <div className="party-size-label">Party Size</div>
-                <select name="" id="">
-                  <option value="">1</option>
-                  <option value="">2</option>
-                </select>
-                <div>Date</div>
-                <div className="time-label">Time</div>
-                <select name="" id="">
-                  <option value="">1</option>
-                  <option value="">2</option>
-                </select>
-                <div></div>
+              <div className="booking-section">
+                <div className="booking-title">Make A Reservation</div>
+                <div className="party-size">
+                  <div className="party-size-label">Party Size</div>
+                  <select name="" id="">
+                    <option value="">For 2</option>
+                    <option value="">For 3</option>
+                  </select>
+                </div>
+                <div className="date-time-section">
+                  <div className="date-section">
+                    <div className="date-label">Date</div>
+                    <select name="" id="">
+                      <option value="">Today</option>
+                      <option value="">Tomorrow</option>
+                    </select>
+                  </div>
+                  <div className="time-section">
+                    <div className="time-label">Time</div>
+                    <select name="" id="">
+                      <option value="">7:00 PM</option>
+                      <option value="">8:00 PM</option>
+                    </select>
+                  </div>
+                </div>
                 <button className="session-submit">Find a Table</button>
               </div>
               <div className="location-section">map sub-section

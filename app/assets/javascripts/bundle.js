@@ -941,7 +941,11 @@ var RestaurantDetail = function RestaurantDetail(_ref) {
   var restaurant = _ref.restaurant;
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "restaurant-detail"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, restaurant.name), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "Ratings"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "Tags"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "Description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "restaurant-title"
+  }, restaurant.name), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "description"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "Ratings"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "Tags"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "Description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "photos"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "photo-title"
@@ -995,7 +999,29 @@ var RestaurantDetail = function RestaurantDetail(_ref) {
     alt: restaurant.name
   }, "Menu Item"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
     alt: restaurant.name
-  }, "Menu Item"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "Reviews"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "blank"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "blank"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "blank"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "blank"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "blank"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "blank"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "blank"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "blank"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "blank"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "blank"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "blank"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "blank"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "blank"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "blank"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "blank"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "blank"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "blank"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "blank"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "blank"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "blank"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "blank"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "blank"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "blank"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "blank"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "blank"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "blank"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+  }, "Menu Item"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "review"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "review-title"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "What People Are Saying")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "review-subtitle"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+    className: "review-overall"
+  }, "Overall ratings and reviews"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Reviews can only be made by diners who have eaten at this restaurant")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
+    className: "review-box"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+    alt: restaurant.name
+  }, "Review Item"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+    alt: restaurant.name
+  }, "Review Item"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+    alt: restaurant.name
+  }, "Review Item"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+    alt: restaurant.name
+  }, "Review Item"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+    alt: restaurant.name
+  }, "Review Item"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+    alt: restaurant.name
+  }, "Review Item"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
     to: "/"
   }, "Homepage"));
 };
@@ -1087,25 +1113,44 @@ function (_React$Component) {
           className: "additional-section"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "booking-section"
-        }, "Make A Reservation", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "booking-title"
+        }, "Make A Reservation"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "party-size"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "party-size-label"
         }, "Party Size"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("select", {
           name: "",
           id: ""
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
           value: ""
-        }, "1"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+        }, "For 2"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
           value: ""
-        }, "2")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "Date"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        }, "For 3"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "date-time-section"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "date-section"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "date-label"
+        }, "Date"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("select", {
+          name: "",
+          id: ""
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+          value: ""
+        }, "Today"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+          value: ""
+        }, "Tomorrow"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "time-section"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "time-label"
         }, "Time"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("select", {
           name: "",
           id: ""
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
           value: ""
-        }, "1"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+        }, "7:00 PM"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
           value: ""
-        }, "2")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        }, "8:00 PM")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
           className: "session-submit"
         }, "Find a Table")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "location-section"
