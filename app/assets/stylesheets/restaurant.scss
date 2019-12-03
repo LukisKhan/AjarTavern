@@ -134,10 +134,10 @@ body {
 }
 //RIGHT SIDED BOXES
 .additional-section{
-  width: 25vw;
+  width: 27vw;
 }
 .additional-section > div {
-  height: 45vh;
+  height: 40vh;
 }
 ////BOOKING SECTION
 .booking-section {
@@ -145,6 +145,8 @@ body {
   position: sticky;
   top: 0;
   padding: 0px 15px 15px 15px;
+  box-shadow: 0px 2px 10px gray;
+  margin-bottom: 40px;
 }
 .booking-section > div {
   padding: 10px;
@@ -170,8 +172,31 @@ select {
   border-bottom: 1px solid rgb(202, 192, 192);
   padding-bottom: 10px;
   width: 48%;
+}
 
 /////LOCATION SECTION
-
+.location-section img {
+  object-fit: cover;
+  width: 95%;
+  height: 95%;
+}
 /////ATMOSPHERE SECTION
+.atmosphere-section{
+  font-size: 18px;
+}
+.atmosphere-section ul{
+  padding: 0px;
+}
+.atmosphere-section li{
+  list-style: none;
+  padding: 10px 10px 10px 0px;
+  display: flex;
+}
+.atmos-title {
+  font-weight: bold;
+  padding: 10px 10px 10px 0px;
+}
+.atmosphere-section i {
+  height: 15px;
+  margin: 4px 4px 4px 0px
 }

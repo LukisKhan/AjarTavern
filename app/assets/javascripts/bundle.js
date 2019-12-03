@@ -1154,9 +1154,20 @@ function (_React$Component) {
           className: "session-submit"
         }, "Find a Table")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "location-section"
-        }, "map sub-section"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        }, "MAP", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+          src: restaurant.photoUrl,
+          alt: restaurant.name
+        })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "atmosphere-section"
-        }, "atmosphere sub-section"))));
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", null, "icon"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "atmos-title"
+        }, "Cuisines"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "Vietnamese Food"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", null, "icon"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "atmos-title"
+        }, "Dining Style"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "Fine Dining"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", null, "icon"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "atmos-title"
+        }, "Dress Code"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "Smart Casual"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", null, "icon"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "atmos-title"
+        }, "Additional"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "Happy Hour, Late Night, Non-Smoking, Outdoor Dining"))))))));
       } else {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "Loading Restaurant");
       }

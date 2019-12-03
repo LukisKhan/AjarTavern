@@ -58,10 +58,41 @@ class RestaurantShow extends React.Component {
                 </div>
                 <button className="session-submit">Find a Table</button>
               </div>
-              <div className="location-section">map sub-section
-        
+              <div className="location-section">MAP
+                <img src={restaurant.photoUrl} alt={restaurant.name} />
               </div>
-              <div className="atmosphere-section">atmosphere sub-section
+              <div className="atmosphere-section">
+                <ul>
+                  <li>
+                    <i>icon</i>
+                    <div>
+                      <div className="atmos-title">Cuisines</div>
+                      <div>Vietnamese Food</div>
+                    </div>
+                  </li>
+                  <li>
+                    <i>icon</i>
+                    <div>
+                      <div className="atmos-title">Dining Style</div>
+                      <div>Fine Dining</div>
+                    </div>
+                  </li>
+                  <li>
+                    <i>icon</i>
+                    <div>
+                      <div className="atmos-title">Dress Code</div>
+                      <div>Smart Casual</div>
+                    </div>
+                  </li>
+                  <li>
+                    <i>icon</i>
+                    <div>
+                      <div className="atmos-title">Additional</div>
+                      <div>Happy Hour, Late Night, Non-Smoking, Outdoor Dining</div>  
+                    </div>
+                  </li>
+                </ul>
+
 
               </div>
       
