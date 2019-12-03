@@ -1,19 +1,10 @@
 import React from 'react';
 import { Route, Link, Switch, Redirect } from 'react-router-dom';
-import ModalContainer from './modal/modal_container';
-import NavbarContainer from './nav/navbar_container';
 import RestaurantShowContainer from './restaurants/restaurant_show_container';
 import MainContentContainer from './main_content/main_content_container';
+import AllBar from './all_nav/all_nav';
 
 const Main = () => {
-  const topbar = (<div className="topbar">
-    <div className="rightbar">
-      <span className="for-restuaranteurs">For Restuaranteurs</span>
-      <span className="mobile">Mobile</span>
-      <span className="help">Help</span>
-    </div>
-    <div className="lang">EN</div>
-  </div>);
   const selectTime = ( <select>
       <option value="800">8:00 AM</option>
       <option value="900">9:00 AM</option>
@@ -38,16 +29,8 @@ const Main = () => {
   </select>)
   return (
     <div>
-      {topbar}
       <div className="app-root">
-        <div className="nav-bar">
-          <div className="nav-bar-left">
-            <Link to="/"><nav className="logo"></nav></Link>
-            <nav className="loc-dropdown"></nav>
-          </div>
-          <ModalContainer />
-          <NavbarContainer />
-        </div>
+        <AllBar />
         <div className="bg"></div>
         <div className="restaurant-search-box">
           <div className="search-options">

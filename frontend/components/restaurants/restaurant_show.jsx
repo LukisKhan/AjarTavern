@@ -1,5 +1,6 @@
 import React from 'react';
 import RestaurantDetail from './restaurant_detail';
+import AllNav from '../all_nav/all_nav';
 
 class RestaurantShow extends React.Component {
   componentDidMount() {
@@ -15,7 +16,7 @@ class RestaurantShow extends React.Component {
     if (restaurant) {
       return (
         <div className="restaurant-show">
-
+          <AllNav />
           <div className="banner-section">
             <img src={restaurant.photoUrl} alt={restaurant.name}/>
           </div>

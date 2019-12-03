@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import SignupContainer from '../session/signup_container';
 import LoginContainer from '../session/login_container';
-//change login to sign in 
 class Home extends Component {
   handleLogout() {
     this.props.logout();
