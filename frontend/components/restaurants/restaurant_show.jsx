@@ -20,7 +20,6 @@ class RestaurantShow extends React.Component {
           <div className="banner-section">
             <img src={restaurant.photoUrl} alt={restaurant.name}/>
           </div>
-
           <div className="restaurant-flexbox">
             <div className="restaurant-section">
               <ul className="restaurant-top-bar">

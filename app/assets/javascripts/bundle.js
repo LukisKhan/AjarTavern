@@ -941,7 +941,61 @@ var RestaurantDetail = function RestaurantDetail(_ref) {
   var restaurant = _ref.restaurant;
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "restaurant-detail"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, restaurant.name), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "Ratings"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "Tags"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "Description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "Photos"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "Menu"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "Reviews"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "blank"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "blank"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "blank"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "blank"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "blank"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "blank"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "blank"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "blank"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "blank"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "blank"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "blank"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "blank"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "blank"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "blank"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "blank"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "blank"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "blank"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "blank"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "blank"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "blank"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "blank"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "blank"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "blank"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "blank"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "blank"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "blank"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, restaurant.name), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "Ratings"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "Tags"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "Description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "photos"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "photo-title"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "9 Photos")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
+    className: "photo-box"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+    src: restaurant.photoUrl,
+    alt: restaurant.name
+  })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+    src: restaurant.photoUrl,
+    alt: restaurant.name
+  })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+    id: "larger-photo",
+    className: "larger-photo"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+    src: restaurant.photoUrl,
+    alt: restaurant.name
+  })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+    src: restaurant.photoUrl,
+    alt: restaurant.name
+  })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+    src: restaurant.photoUrl,
+    alt: restaurant.name
+  })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+    src: restaurant.photoUrl,
+    alt: restaurant.name
+  })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+    src: restaurant.photoUrl,
+    alt: restaurant.name
+  })))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "menu"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "menu-title"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Menu")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
+    className: "menu-box"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+    alt: restaurant.name
+  }, "Menu Item"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+    alt: restaurant.name
+  }, "Menu Item Longer"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+    alt: restaurant.name
+  }, "Menu Item"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+    alt: restaurant.name
+  }, "Short"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+    alt: restaurant.name
+  }, "Menu Item"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+    alt: restaurant.name
+  }, "Menu Item"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+    alt: restaurant.name
+  }, "Menu Item"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+    alt: restaurant.name
+  }, "Menu Item"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+    alt: restaurant.name
+  }, "Menu Item"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "Reviews"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "blank"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "blank"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "blank"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "blank"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "blank"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "blank"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "blank"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "blank"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "blank"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "blank"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "blank"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "blank"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "blank"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "blank"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "blank"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "blank"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "blank"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "blank"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "blank"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "blank"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "blank"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "blank"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "blank"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "blank"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "blank"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "blank"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
     to: "/"
   }, "Homepage"));
 };
