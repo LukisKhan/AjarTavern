@@ -616,7 +616,9 @@ var MainContentDetail = function MainContentDetail(_ref) {
     className: "restaurant-img",
     src: restaurant.photoUrl,
     alt: restaurant.name
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "restaurant-below-img"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "restaurant-name"
   }, restaurant.name), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "restaurant-review"

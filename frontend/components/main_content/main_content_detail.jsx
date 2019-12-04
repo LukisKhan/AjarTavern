@@ -6,7 +6,7 @@ const MainContentDetail = ({restaurant}) => {
     <li className="restaurant-box">
       <Link className="restaurant-link" to={`/restaurants/${restaurant.id}`}>
         <img className="restaurant-img" src={restaurant.photoUrl} alt={restaurant.name} />
-        <div>
+        <div className="restaurant-below-img">
           <div className="restaurant-name">{restaurant.name}</div>
           <div className="restaurant-review"> #'s reviews</div>
           <div className="restaurant-cuisine"> cuisine $$ </div>
