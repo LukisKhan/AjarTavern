@@ -1,0 +1,17 @@
+.footer-root {
+  background-color: rgb(50,50,50);
+  display: flex;
+  justify-content: space-evenly;
+  color: rgb(170,170,170);
+}
+.footer-root h3 {
+  color: white;
+}
+.footer-root li {
+  list-style: none;
+  padding: 2px 0px;
+}
+.footer-root ul {
+  margin: 0px;
+  padding: 0px;
+}

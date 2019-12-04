@@ -51,6 +51,14 @@ class Footer extends React.Component {
             <li>OpenTable.it</li>
           </ul>
         </div>
+        <div className="join-us-footer">
+          <h3>JOIN US ON</h3>
+          <ul>
+            <li> <i></i> Social Media</li>
+            <li> <i></i> Social Media</li>
+            <li> <i></i> Social Media</li>
+          </ul>
+        </div>
       </div>
     )
   }

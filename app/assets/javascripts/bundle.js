@@ -616,9 +616,15 @@ var MainContentDetail = function MainContentDetail(_ref) {
     className: "restaurant-img",
     src: restaurant.photoUrl,
     alt: restaurant.name
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "restaurant-name"
-  }, restaurant.name)));
+  }, restaurant.name), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "restaurant-review"
+  }, " #'s reviews"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "restaurant-cuisine"
+  }, " cuisine $$ "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "restaurant-dot"
+  }))));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (MainContentDetail);
@@ -769,7 +775,9 @@ function (_React$Component) {
         className: "more-footer"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "MORE"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "OpenTable for iOS"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "OpenTable for Android"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Affiliate Program"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Contact Us"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "our-sites-footer"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "OUR SITES"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "OpenTable.jp"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "OpenTable.de"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "OpenTable.es"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "OpenTable.com/mx"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "OpenTable.ca"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "OpenTable.hk"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "OpenTable.ie"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "OpenTable.sg"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "OpenTable.nl"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "OpenTable.co.uk"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "OpenTable.com.au"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "OpenTable.ae"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "OpenTable.co.th"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "OpenTable.it"))));
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "OUR SITES"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "OpenTable.jp"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "OpenTable.de"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "OpenTable.es"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "OpenTable.com/mx"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "OpenTable.ca"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "OpenTable.hk"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "OpenTable.ie"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "OpenTable.sg"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "OpenTable.nl"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "OpenTable.co.uk"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "OpenTable.com.au"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "OpenTable.ae"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "OpenTable.co.th"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "OpenTable.it"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "join-us-footer"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "JOIN US ON"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, " ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", null), " Social Media"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, " ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", null), " Social Media"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, " ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", null), " Social Media"))));
     }
   }]);
 
