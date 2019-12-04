@@ -9,8 +9,7 @@ const MainContentDetail = ({restaurant}) => {
         <div className="restaurant-below-img">
           <div className="restaurant-name">{restaurant.name}</div>
           <div className="restaurant-review"> #'s reviews</div>
-          <div className="restaurant-cuisine"> cuisine $$ </div>
-          <div className="restaurant-dot"></div>
+          <div className="restaurant-cuisine"><span>Cuisine</span> <span className="dot">{String.fromCharCode(183)}</span> <span>$$$</span></div>
         </div>
       </Link>
     </li>

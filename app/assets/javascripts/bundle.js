@@ -624,9 +624,9 @@ var MainContentDetail = function MainContentDetail(_ref) {
     className: "restaurant-review"
   }, " #'s reviews"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "restaurant-cuisine"
-  }, " cuisine $$ "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "restaurant-dot"
-  }))));
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "Cuisine"), " ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "dot"
+  }, String.fromCharCode(183)), " ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "$$$")))));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (MainContentDetail);

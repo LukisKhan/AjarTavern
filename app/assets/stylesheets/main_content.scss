@@ -50,11 +50,17 @@ h2 {
   padding: 3px;
 }
 .restaurant-cuisine {
-  padding: 3px;
+  padding: 1px;
   font-weight: lighter;
 }
 .restaurant-dot{
   content: "\8226";
+}
+.dot {
+  font-weight: bolder;
+  font-size: 24px;
+  position: relative;
+  top: 3.5px;
 }
 @keyframes selected {
   100% {
