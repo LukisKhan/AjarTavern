@@ -3,6 +3,7 @@ import { Route, Link, Switch, Redirect } from 'react-router-dom';
 import RestaurantShowContainer from './restaurants/restaurant_show_container';
 import MainContentContainer from './main_content/main_content_container';
 import AllBar from './all_nav/all_nav';
+import Footer from './nav/footer';
 
 const Main = () => {
   const selectTime = ( <select>
@@ -43,6 +44,7 @@ const Main = () => {
           <button>Let's Go</button>
         </div>
         <MainContentContainer />
+        <Footer />
       </div>
     </div>
   );

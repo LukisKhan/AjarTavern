@@ -380,6 +380,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _restaurants_restaurant_show_container__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./restaurants/restaurant_show_container */ "./frontend/components/restaurants/restaurant_show_container.js");
 /* harmony import */ var _main_content_main_content_container__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./main_content/main_content_container */ "./frontend/components/main_content/main_content_container.js");
 /* harmony import */ var _all_nav_all_nav__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./all_nav/all_nav */ "./frontend/components/all_nav/all_nav.jsx");
+/* harmony import */ var _nav_footer__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./nav/footer */ "./frontend/components/nav/footer.jsx");
+
 
 
 
@@ -447,7 +449,7 @@ var Main = function Main() {
     type: "text",
     name: "search-field",
     id: ""
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", null, "Let's Go")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_main_content_main_content_container__WEBPACK_IMPORTED_MODULE_3__["default"], null)));
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", null, "Let's Go")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_main_content_main_content_container__WEBPACK_IMPORTED_MODULE_3__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_nav_footer__WEBPACK_IMPORTED_MODULE_5__["default"], null)));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (function () {
@@ -531,9 +533,19 @@ function (_React$Component) {
 
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "main-content-root"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "featured-restaurants"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Featured Restaurants"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("hr", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
         className: "restaurants-section-ul"
-      }, restaurants));
+      }, restaurants)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "top-cuisines"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Top Cuisines"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("hr", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
+        className: "restaurants-section-ul"
+      }, restaurants)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "featured-area"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Featured Area"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("hr", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
+        className: "restaurants-section-ul"
+      }, restaurants)));
     }
   }]);
 
@@ -699,6 +711,72 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_2__["connect"])(mapStateToProps, mapDispatchToProps)(_modal__WEBPACK_IMPORTED_MODULE_0__["default"]));
+
+/***/ }),
+
+/***/ "./frontend/components/nav/footer.jsx":
+/*!********************************************!*\
+  !*** ./frontend/components/nav/footer.jsx ***!
+  \********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+
+
+var Footer =
+/*#__PURE__*/
+function (_React$Component) {
+  _inherits(Footer, _React$Component);
+
+  function Footer() {
+    _classCallCheck(this, Footer);
+
+    return _possibleConstructorReturn(this, _getPrototypeOf(Footer).apply(this, arguments));
+  }
+
+  _createClass(Footer, [{
+    key: "render",
+    value: function render() {
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "footer-root"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "discover-footer"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "DISCOVER"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Dining Rewards"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Private Dining"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Top 100 Restaurants"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Reserve for Others"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Cuisines Near Me"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "opentable-footer"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "OPENTABLE"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "About Us"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Blog"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Careers"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Press"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "more-footer"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "MORE"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "OpenTable for iOS"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "OpenTable for Android"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Affiliate Program"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Contact Us"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "our-sites-footer"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "OUR SITES"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "OpenTable.jp"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "OpenTable.de"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "OpenTable.es"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "OpenTable.com/mx"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "OpenTable.ca"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "OpenTable.hk"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "OpenTable.ie"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "OpenTable.sg"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "OpenTable.nl"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "OpenTable.co.uk"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "OpenTable.com.au"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "OpenTable.ae"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "OpenTable.co.th"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "OpenTable.it"))));
+    }
+  }]);
+
+  return Footer;
+}(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
+
+/* harmony default export */ __webpack_exports__["default"] = (Footer);
 
 /***/ }),
 

@@ -16,11 +16,28 @@ class MainContent extends React.Component {
     }
     return (
       <div className="main-content-root">
-        <h2>Featured Restaurants</h2>
-        <hr />
-        <ul className="restaurants-section-ul">
-          {restaurants}
-        </ul>
+        <div className="featured-restaurants">
+          <h2>Featured Restaurants</h2>
+          <hr />
+          <ul className="restaurants-section-ul">
+            {restaurants}
+          </ul>
+        </div>
+        <div className="top-cuisines">
+          <h2>Top Cuisines</h2>
+          <hr />
+          <ul className="restaurants-section-ul">
+            {restaurants}
+          </ul>
+        </div>
+        <div className="featured-area">
+          <h2>Featured Area</h2>
+          <hr />
+          <ul className="restaurants-section-ul">
+            {restaurants}
+          </ul>
+        </div>
+
       </div>
     )
   }
