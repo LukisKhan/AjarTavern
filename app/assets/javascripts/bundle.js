@@ -389,7 +389,9 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var Main = function Main() {
-  var selectTime = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("select", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+  var selectTime = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("select", {
+    className: "time-select"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
     value: "800"
   }, "8:00 AM"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
     value: "900"
@@ -414,32 +416,35 @@ var Main = function Main() {
     className: "num-guests-select"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
     value: "2"
-  }, "2"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+  }, "2 people"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "3 people"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
     value: "3"
-  }, "3"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+  }, "3 people"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
     value: "4"
-  }, "4"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+  }, "4 people"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
     value: "5"
-  }, "5"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+  }, "5 people"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
     value: "6"
-  }, "6"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+  }, "6 people"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
     value: "7"
-  }, "7"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+  }, "7 people"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
     value: "8"
-  }, "8"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+  }, "8 people"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
     value: "9"
-  }, "9"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+  }, "9 people"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
     value: "10"
-  }, "10"));
+  }, "10 people"));
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "app-root"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_all_nav_all_nav__WEBPACK_IMPORTED_MODULE_4__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "bg"
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "search-header"
+  }, "Find your table for any occasion"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "restaurant-search-box"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "search-options"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    className: "date-dropdown ",
     type: "date",
     id: "start",
     name: "booking-date",
@@ -447,9 +452,12 @@ var Main = function Main() {
     max: "2019-12-31"
   }), selectTime, selectNumGuest), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
     type: "text",
-    name: "search-field",
-    id: ""
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", null, "Let's Go")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_main_content_main_content_container__WEBPACK_IMPORTED_MODULE_3__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_nav_footer__WEBPACK_IMPORTED_MODULE_5__["default"], null)));
+    className: "search-field",
+    id: "",
+    placeholder: "Search Nearby"
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+    id: "lets-go-btn"
+  }, "Let's Go")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_main_content_main_content_container__WEBPACK_IMPORTED_MODULE_3__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_nav_footer__WEBPACK_IMPORTED_MODULE_5__["default"], null)));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (function () {
@@ -535,14 +543,16 @@ function (_React$Component) {
         className: "main-content-root"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "featured-restaurants"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Featured Restaurants"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("hr", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
+        className: "featured-restaurants-label"
+      }, "Featured Restaurants"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("hr", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
         className: "restaurants-section-ul"
       }, restaurants)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "top-cuisines"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Top Cuisines"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("hr", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
         className: "restaurants-section-ul"
       }, restaurants)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "featured-area"
+        className: "featured-areas"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Featured Area"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("hr", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
         className: "restaurants-section-ul"
       }, restaurants)));
@@ -624,9 +634,11 @@ var MainContentDetail = function MainContentDetail(_ref) {
     className: "restaurant-review"
   }, " #'s reviews"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "restaurant-cuisine"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "Cuisine"), " ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "Cuisine"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
     className: "dot"
-  }, String.fromCharCode(183)), " ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "$$$")))));
+  }, " " + String.fromCharCode(183) + " "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "$$$"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "dot"
+  }, " " + String.fromCharCode(183) + " "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "Location")))));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (MainContentDetail);
@@ -929,7 +941,7 @@ function (_React$Component) {
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", {
           className: "header-name"
         }, "Hi, ", _this3.props.currentUser.firstname, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
-          className: "arrow down fa fa-chevron-down",
+          className: "arrow down fa",
           ref: function ref(iconRef) {
             return _this3.iconRef = iconRef;
           },

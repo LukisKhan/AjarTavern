@@ -57,11 +57,20 @@ h2 {
   content: "\8226";
 }
 .dot {
-  font-weight: bolder;
-  font-size: 24px;
+  font-size: 28px;
   position: relative;
   top: 3.5px;
 }
+.featured-restaurants {
+  padding-bottom: 40px;
+}
+.top-cuisines {
+  padding-bottom: 40px;
+}
+.featured-areas {
+  padding-bottom: 40px;
+}
+
 @keyframes selected {
   100% {
     transform: translate(0px, -4px);

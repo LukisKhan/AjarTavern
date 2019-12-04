@@ -17,7 +17,7 @@ class MainContent extends React.Component {
     return (
       <div className="main-content-root">
         <div className="featured-restaurants">
-          <h2>Featured Restaurants</h2>
+          <h2 className="featured-restaurants-label">Featured Restaurants</h2>
           <hr />
           <ul className="restaurants-section-ul">
             {restaurants}
@@ -30,7 +30,7 @@ class MainContent extends React.Component {
             {restaurants}
           </ul>
         </div>
-        <div className="featured-area">
+        <div className="featured-areas">
           <h2>Featured Area</h2>
           <hr />
           <ul className="restaurants-section-ul">
