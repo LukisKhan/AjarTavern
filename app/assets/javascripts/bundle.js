@@ -1145,6 +1145,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _all_nav_all_nav__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../all_nav/all_nav */ "./frontend/components/all_nav/all_nav.jsx");
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
@@ -1153,9 +1155,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
 function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
 
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
 
@@ -1170,10 +1172,20 @@ var RestaurantShow =
 function (_React$Component) {
   _inherits(RestaurantShow, _React$Component);
 
-  function RestaurantShow() {
+  function RestaurantShow(props) {
+    var _this;
+
     _classCallCheck(this, RestaurantShow);
 
-    return _possibleConstructorReturn(this, _getPrototypeOf(RestaurantShow).apply(this, arguments));
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(RestaurantShow).call(this, props));
+    _this.state = {
+      numParty: 2,
+      date: 0,
+      time: 0
+    };
+    _this.update = _this.update.bind(_assertThisInitialized(_this));
+    _this.handleFindATableInput = _this.handleFindATableInput.bind(_assertThisInitialized(_this));
+    return _this;
   }
 
   _createClass(RestaurantShow, [{
@@ -1187,6 +1199,28 @@ function (_React$Component) {
       if (prevProps.match.params.restaurantId != this.props.match.params.restaurantId) {
         this.props.fetchRestaurant(this.props.match.params.restaurantId);
       }
+    }
+  }, {
+    key: "update",
+    value: function update(field) {
+      var _this2 = this;
+
+      return function (e) {
+        _this2.setState(_defineProperty({}, field, e.target.value));
+      };
+    }
+  }, {
+    key: "handleFindATableInput",
+    value: function handleFindATableInput(e) {
+      e.preventDefault();
+      var restId = this.props.restaurant.id;
+      var restName = this.props.restaurant.name;
+      var userId = this.props.currentUser.id;
+      var userFN = this.props.currentUser.firstname;
+      var time = this.state.time;
+      var date = this.state.date;
+      var numParty = this.state.numParty;
+      console.log("A table for ".concat(numParty, " \n      has been reserved for ").concat(userFN, " \n      on the date ").concat(date, " and time ").concat(time, "\n      at the wonderful restaurant ").concat(restName));
     }
   }, {
     key: "render",
@@ -1213,6 +1247,9 @@ function (_React$Component) {
           className: "additional-section"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "booking-section"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
+          className: "BLANK",
+          onSubmit: this.handleFindATableInput
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "booking-title"
         }, "Make A Reservation"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -1220,12 +1257,12 @@ function (_React$Component) {
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "party-size-label"
         }, "Party Size"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("select", {
-          name: "",
-          id: ""
+          value: this.state.numParty,
+          onChange: this.update('numParty')
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
-          value: ""
+          value: "2"
         }, "For 2"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
-          value: ""
+          value: "3"
         }, "For 3"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "date-time-section"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -1233,26 +1270,26 @@ function (_React$Component) {
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "date-label"
         }, "Date"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("select", {
-          name: "",
-          id: ""
+          value: this.state.date,
+          onChange: this.update('date')
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
-          value: ""
+          value: "1"
         }, "Today"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
-          value: ""
+          value: "2"
         }, "Tomorrow"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "time-section"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "time-label"
         }, "Time"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("select", {
-          name: "",
-          id: ""
+          value: this.state.time,
+          onChange: this.update('time')
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
-          value: ""
+          value: "19"
         }, "7:00 PM"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
-          value: ""
+          value: "20"
         }, "8:00 PM")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
           className: "session-submit"
-        }, "Find a Table")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        }, "Find a Table"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "location-section"
         }, "MAP", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
           src: restaurant.photoUrl,
@@ -1300,9 +1337,11 @@ __webpack_require__.r(__webpack_exports__);
 var msp = function msp(state, ownProps) {
   var id = parseInt(ownProps.match.params.restaurantId);
   var restaurant = state.entities.restaurants[id];
+  var currentUser = state.entities.users[state.session.id];
   return {
     id: id,
-    restaurant: restaurant
+    restaurant: restaurant,
+    currentUser: currentUser
   };
 };
 

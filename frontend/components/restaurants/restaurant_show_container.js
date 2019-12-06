@@ -5,9 +5,11 @@ import RestaurantShow from './restaurant_show';
 const msp = (state, ownProps) => {
   const id = parseInt(ownProps.match.params.restaurantId);
   const restaurant = state.entities.restaurants[id];
+  const currentUser = state.entities.users[state.session.id];
   return { 
     id: id, 
-    restaurant: restaurant 
+    restaurant: restaurant,
+    currentUser: currentUser
   };
 };
 

@@ -3,6 +3,16 @@ import RestaurantDetail from './restaurant_detail';
 import AllNav from '../all_nav/all_nav';
 
 class RestaurantShow extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      numParty: 2,
+      date: 0,
+      time: 0
+    };
+    this.update = this.update.bind(this);
+    this.handleFindATableInput = this.handleFindATableInput.bind(this);
+  }
   componentDidMount() {
     this.props.fetchRestaurant(this.props.match.params.restaurantId);
   }
@@ -10,6 +20,25 @@ class RestaurantShow extends React.Component {
     if (prevProps.match.params.restaurantId != this.props.match.params.restaurantId) {
       this.props.fetchRestaurant(this.props.match.params.restaurantId);
     }
+  }
+  update(field) {
+    return (e) => {
+      this.setState({ [field]: e.target.value });
+    };
+  }
+  handleFindATableInput(e) {
+    e.preventDefault();
+    let restId = this.props.restaurant.id
+    let restName = this.props.restaurant.name
+    let userId = this.props.currentUser.id
+    let userFN = this.props.currentUser.firstname
+    let time = this.state.time
+    let date = this.state.date
+    let numParty = this.state.numParty
+    console.log(`A table for ${numParty} 
+      has been reserved for ${userFN} 
+      on the date ${date} and time ${time}
+      at the wonderful restaurant ${restName}`)
   }
   render() {
     const restaurant = this.props.restaurant;
@@ -32,31 +61,33 @@ class RestaurantShow extends React.Component {
             </div>
             <div className="additional-section">
               <div className="booking-section">
-                <div className="booking-title">Make A Reservation</div>
-                <div className="party-size">
-                  <div className="party-size-label">Party Size</div>
-                  <select name="" id="">
-                    <option value="">For 2</option>
-                    <option value="">For 3</option>
-                  </select>
-                </div>
-                <div className="date-time-section">
-                  <div className="date-section">
-                    <div className="date-label">Date</div>
-                    <select name="" id="">
-                      <option value="">Today</option>
-                      <option value="">Tomorrow</option>
+                <form className="BLANK" onSubmit={this.handleFindATableInput} >
+                  <div className="booking-title">Make A Reservation</div>
+                  <div className="party-size">
+                    <div className="party-size-label">Party Size</div>
+                    <select value={this.state.numParty} onChange={this.update('numParty')} >
+                      <option value="2">For 2</option>
+                      <option value="3">For 3</option>
                     </select>
                   </div>
-                  <div className="time-section">
-                    <div className="time-label">Time</div>
-                    <select name="" id="">
-                      <option value="">7:00 PM</option>
-                      <option value="">8:00 PM</option>
-                    </select>
+                  <div className="date-time-section">
+                    <div className="date-section">
+                      <div className="date-label">Date</div>
+                      <select value={this.state.date} onChange={this.update('date')} >
+                        <option value="1">Today</option>
+                        <option value="2">Tomorrow</option>
+                      </select>
+                    </div>
+                    <div className="time-section">
+                      <div className="time-label">Time</div>
+                      <select value={this.state.time} onChange={this.update('time')} >
+                        <option value="19">7:00 PM</option>
+                        <option value="20">8:00 PM</option>
+                      </select>
+                    </div>
                   </div>
-                </div>
-                <button className="session-submit">Find a Table</button>
+                  <button className="session-submit">Find a Table</button>
+                </form>
               </div>
               <div className="location-section">MAP
                 <img src={restaurant.photoUrl} alt={restaurant.name} />
