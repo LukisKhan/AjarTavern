@@ -1,4 +1,4 @@
-import * as APIUtil from '../utils/booking_util';
+import * as APIUtil from '../utils/booking_utils';
 
 export const RECEIVE_BOOKINGS = 'RECEIVE_BOOKINGS';
 export const RECEIVE_BOOKING = 'RECEIVE_BOOKING';

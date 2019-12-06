@@ -1,5 +1,5 @@
 class Api::BookingsController < ApplicationController
-  before_action :require_login
+  # before_action :require_logged_in
   def index
     @bookings = Booking.all
   end
@@ -13,7 +13,8 @@ class Api::BookingsController < ApplicationController
     @booking = Booking.new(booking_parmas)
     @booking.user_id = current_user.id
     if @booking.save
-      render "api/bookings/show"
+      # render "api/bookings/show"
+      puts "success"
     else
       render json: @booking.errors.full_messages, status: 422
     end
@@ -24,8 +25,6 @@ class Api::BookingsController < ApplicationController
     @booking = Booking.find(params[:id])
   end
   def destroy
-  end
-  def index
   end
   private
   def booking_parmas

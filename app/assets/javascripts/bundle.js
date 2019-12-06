@@ -86,6 +86,55 @@
 /************************************************************************/
 /******/ ({
 
+/***/ "./frontend/actions/booking_actions.js":
+/*!*********************************************!*\
+  !*** ./frontend/actions/booking_actions.js ***!
+  \*********************************************/
+/*! exports provided: RECEIVE_BOOKINGS, RECEIVE_BOOKING, receiveBookings, receiveBooking, fetchBookings, fetchBooking */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RECEIVE_BOOKINGS", function() { return RECEIVE_BOOKINGS; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RECEIVE_BOOKING", function() { return RECEIVE_BOOKING; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "receiveBookings", function() { return receiveBookings; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "receiveBooking", function() { return receiveBooking; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchBookings", function() { return fetchBookings; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchBooking", function() { return fetchBooking; });
+/* harmony import */ var _utils_booking_utils__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../utils/booking_utils */ "./frontend/utils/booking_utils.js");
+
+var RECEIVE_BOOKINGS = 'RECEIVE_BOOKINGS';
+var RECEIVE_BOOKING = 'RECEIVE_BOOKING';
+var receiveBookings = function receiveBookings(bookings) {
+  return {
+    type: RECEIVE_BOOKINGS,
+    bookings: bookings
+  };
+};
+var receiveBooking = function receiveBooking(_ref) {
+  var booking = _ref.booking;
+  return {
+    type: RECEIVE_BOOKING,
+    booking: booking
+  };
+};
+var fetchBookings = function fetchBookings() {
+  return function (dispatch) {
+    return _utils_booking_utils__WEBPACK_IMPORTED_MODULE_0__["fetchBookings"]().then(function (res) {
+      return dispatch(receiveBookings(res));
+    });
+  };
+};
+var fetchBooking = function fetchBooking(id) {
+  return function (dispatch) {
+    return _utils_booking_utils__WEBPACK_IMPORTED_MODULE_0__["fetchBooking"](id).then(function (res) {
+      return dispatch(receiveBooking(res));
+    });
+  };
+};
+
+/***/ }),
+
 /***/ "./frontend/actions/modal_actions.js":
 /*!*******************************************!*\
   !*** ./frontend/actions/modal_actions.js ***!
@@ -1192,6 +1241,7 @@ function (_React$Component) {
     key: "componentDidMount",
     value: function componentDidMount() {
       this.props.fetchRestaurant(this.props.match.params.restaurantId);
+      this.props.fetchBookings();
     }
   }, {
     key: "componentDidUpdate",
@@ -1213,14 +1263,28 @@ function (_React$Component) {
     key: "handleFindATableInput",
     value: function handleFindATableInput(e) {
       e.preventDefault();
-      var restId = this.props.restaurant.id;
-      var restName = this.props.restaurant.name;
-      var userId = this.props.currentUser.id;
-      var userFN = this.props.currentUser.firstname;
+      var restId, restName, userId, userFN;
+
+      if (this.props.restaurant) {
+        restId = this.props.restaurant.id;
+        restName = this.props.restaurant.name;
+      }
+
+      if (this.props.currentUser) {
+        userId = this.props.currentUser.id;
+        userFN = this.props.currentUser.firstname;
+      }
+
+      var bookings = this.props.bookings;
+      var currentBookings = [];
+      Object.values(bookings).forEach(function (ele) {
+        if (ele.user_id === userId) currentBookings.push(ele);
+      });
       var time = this.state.time;
       var date = this.state.date;
       var numParty = this.state.numParty;
-      console.log("A table for ".concat(numParty, " \n      has been reserved for ").concat(userFN, " \n      on the date ").concat(date, " and time ").concat(time, "\n      at the wonderful restaurant ").concat(restName));
+      console.log("A table for ".concat(numParty, " \n      has been reserved for ").concat(userFN, " \n      on the date ").concat(date, " and time ").concat(time, "\n      at the wonderful restaurant ").concat(restName, "\n      ID: ").concat(restId, " and ").concat(userId, "\n      current bookings ").concat(bookings, "\n      "));
+      console.log(currentBookings);
     }
   }, {
     key: "render",
@@ -1328,8 +1392,10 @@ function (_React$Component) {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _actions_restaurant_actions__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../actions/restaurant_actions */ "./frontend/actions/restaurant_actions.js");
-/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
-/* harmony import */ var _restaurant_show__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./restaurant_show */ "./frontend/components/restaurants/restaurant_show.jsx");
+/* harmony import */ var _actions_booking_actions__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../actions/booking_actions */ "./frontend/actions/booking_actions.js");
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
+/* harmony import */ var _restaurant_show__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./restaurant_show */ "./frontend/components/restaurants/restaurant_show.jsx");
+
 
 
 
@@ -1338,10 +1404,12 @@ var msp = function msp(state, ownProps) {
   var id = parseInt(ownProps.match.params.restaurantId);
   var restaurant = state.entities.restaurants[id];
   var currentUser = state.entities.users[state.session.id];
+  var bookings = state.entities.bookings;
   return {
     id: id,
     restaurant: restaurant,
-    currentUser: currentUser
+    currentUser: currentUser,
+    bookings: bookings
   };
 };
 
@@ -1349,11 +1417,14 @@ var mdp = function mdp(dispatch) {
   return {
     fetchRestaurant: function fetchRestaurant(id) {
       return dispatch(Object(_actions_restaurant_actions__WEBPACK_IMPORTED_MODULE_0__["fetchRestaurant"])(id));
+    },
+    fetchBookings: function fetchBookings() {
+      return dispatch(Object(_actions_booking_actions__WEBPACK_IMPORTED_MODULE_1__["fetchBookings"])());
     }
   };
 };
 
-/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_1__["connect"])(msp, mdp)(_restaurant_show__WEBPACK_IMPORTED_MODULE_2__["default"]));
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_2__["connect"])(msp, mdp)(_restaurant_show__WEBPACK_IMPORTED_MODULE_3__["default"]));
 
 /***/ }),
 
@@ -1837,6 +1908,41 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
 
 /***/ }),
 
+/***/ "./frontend/reducers/bookings_reducer.js":
+/*!***********************************************!*\
+  !*** ./frontend/reducers/bookings_reducer.js ***!
+  \***********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _actions_booking_actions__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../actions/booking_actions */ "./frontend/actions/booking_actions.js");
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+
+
+var bookingReducer = function bookingReducer() {
+  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+  var action = arguments.length > 1 ? arguments[1] : undefined;
+  Object.freeze(state);
+
+  switch (action.type) {
+    case _actions_booking_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_BOOKINGS"]:
+      return Object.assign({}, action.bookings);
+
+    case _actions_booking_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_BOOKING"]:
+      return Object.assign({}, state, _defineProperty({}, action.booking.id, action.booking));
+
+    default:
+      return state;
+  }
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (bookingReducer);
+
+/***/ }),
+
 /***/ "./frontend/reducers/entities_reducer.js":
 /*!***********************************************!*\
   !*** ./frontend/reducers/entities_reducer.js ***!
@@ -1849,12 +1955,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var redux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! redux */ "./node_modules/redux/es/redux.js");
 /* harmony import */ var _users_reducer__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./users_reducer */ "./frontend/reducers/users_reducer.js");
 /* harmony import */ var _restaurants_reducer__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./restaurants_reducer */ "./frontend/reducers/restaurants_reducer.js");
+/* harmony import */ var _bookings_reducer__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./bookings_reducer */ "./frontend/reducers/bookings_reducer.js");
+
 
 
 
 /* harmony default export */ __webpack_exports__["default"] = (Object(redux__WEBPACK_IMPORTED_MODULE_0__["combineReducers"])({
   users: _users_reducer__WEBPACK_IMPORTED_MODULE_1__["default"],
-  restaurants: _restaurants_reducer__WEBPACK_IMPORTED_MODULE_2__["default"]
+  restaurants: _restaurants_reducer__WEBPACK_IMPORTED_MODULE_2__["default"],
+  bookings: _bookings_reducer__WEBPACK_IMPORTED_MODULE_3__["default"]
 }));
 
 /***/ }),
@@ -2115,6 +2224,43 @@ __webpack_require__.r(__webpack_exports__);
   var preloadedState = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
   return Object(redux__WEBPACK_IMPORTED_MODULE_0__["createStore"])(_reducers_root_reducer__WEBPACK_IMPORTED_MODULE_2__["default"], preloadedState, Object(redux__WEBPACK_IMPORTED_MODULE_0__["applyMiddleware"])(redux_thunk__WEBPACK_IMPORTED_MODULE_3__["default"], redux_logger__WEBPACK_IMPORTED_MODULE_1___default.a));
 });
+
+/***/ }),
+
+/***/ "./frontend/utils/booking_utils.js":
+/*!*****************************************!*\
+  !*** ./frontend/utils/booking_utils.js ***!
+  \*****************************************/
+/*! exports provided: fetchBookings, fetchBooking, postBooking */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchBookings", function() { return fetchBookings; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchBooking", function() { return fetchBooking; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "postBooking", function() { return postBooking; });
+var fetchBookings = function fetchBookings(data) {
+  return $.ajax({
+    method: 'GET',
+    url: 'api/bookings/',
+    data: data
+  });
+};
+var fetchBooking = function fetchBooking(id) {
+  return $.ajax({
+    method: 'GET',
+    url: 'api/bookings/' + id
+  });
+};
+var postBooking = function postBooking(booking) {
+  return $.ajax({
+    url: '/api/bookings',
+    method: 'POST',
+    data: {
+      booking: booking
+    }
+  });
+};
 
 /***/ }),
 

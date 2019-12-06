@@ -30,7 +30,7 @@ rest4 = Restaurant.create(name:"Pho Bang", address:"123 st", phone_num:"555-555"
 file4 = open('https://full-stacks-lp-aa-dev.s3.us-east-2.amazonaws.com/pho_bang.jpeg')
 rest4.photo.attach(io: file4, filename: "rest4pic")
 
-Booking.create(user_id: "12", restaurant_id: "6", time: 19, date: 123119, numParty: 2);
+Booking.create(user_id: "13", restaurant_id: "10", time: 19, date: 1, numParty: 2);
 
 # Restaurant.find(Booking.find(1).restaurant_id)
 # find the restaurant of the booking_id = 1

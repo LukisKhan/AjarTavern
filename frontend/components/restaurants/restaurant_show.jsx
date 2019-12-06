@@ -15,6 +15,7 @@ class RestaurantShow extends React.Component {
   }
   componentDidMount() {
     this.props.fetchRestaurant(this.props.match.params.restaurantId);
+    this.props.fetchBookings();
   }
   componentDidUpdate(prevProps) {
     if (prevProps.match.params.restaurantId != this.props.match.params.restaurantId) {
@@ -28,17 +29,31 @@ class RestaurantShow extends React.Component {
   }
   handleFindATableInput(e) {
     e.preventDefault();
-    let restId = this.props.restaurant.id
-    let restName = this.props.restaurant.name
-    let userId = this.props.currentUser.id
-    let userFN = this.props.currentUser.firstname
-    let time = this.state.time
-    let date = this.state.date
-    let numParty = this.state.numParty
+    let restId, restName, userId, userFN;
+    if(this.props.restaurant) {
+      restId = this.props.restaurant.id;
+      restName = this.props.restaurant.name;
+    }
+    if(this.props.currentUser) {
+      userId = this.props.currentUser.id;
+      userFN = this.props.currentUser.firstname;
+    }
+    let bookings = this.props.bookings;
+    let currentBookings = [];
+    Object.values(bookings).forEach(ele => {
+      if (ele.user_id === userId) currentBookings.push(ele)
+    })
+    let time = this.state.time;
+    let date = this.state.date;
+    let numParty = this.state.numParty;
     console.log(`A table for ${numParty} 
       has been reserved for ${userFN} 
       on the date ${date} and time ${time}
-      at the wonderful restaurant ${restName}`)
+      at the wonderful restaurant ${restName}
+      ID: ${restId} and ${userId}
+      current bookings ${bookings}
+      `)
+    console.log(currentBookings)
   }
   render() {
     const restaurant = this.props.restaurant;

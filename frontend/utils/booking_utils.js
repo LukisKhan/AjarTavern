@@ -12,3 +12,11 @@ export const fetchBooking = id => (
     url: 'api/bookings/' + id
   })
 );
+
+export const postBooking = (booking) => {
+  return $.ajax({
+    url: '/api/bookings',
+    method: 'POST',
+    data: { booking }
+  });
+};
