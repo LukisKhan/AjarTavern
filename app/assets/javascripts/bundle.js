@@ -90,7 +90,7 @@
 /*!*********************************************!*\
   !*** ./frontend/actions/booking_actions.js ***!
   \*********************************************/
-/*! exports provided: RECEIVE_BOOKINGS, RECEIVE_BOOKING, receiveBookings, receiveBooking, fetchBookings, fetchBooking */
+/*! exports provided: RECEIVE_BOOKINGS, RECEIVE_BOOKING, receiveBookings, receiveBooking, fetchBookings, fetchBooking, createNewBooking */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -101,6 +101,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "receiveBooking", function() { return receiveBooking; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchBookings", function() { return fetchBookings; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchBooking", function() { return fetchBooking; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "createNewBooking", function() { return createNewBooking; });
 /* harmony import */ var _utils_booking_utils__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../utils/booking_utils */ "./frontend/utils/booking_utils.js");
 
 var RECEIVE_BOOKINGS = 'RECEIVE_BOOKINGS';
@@ -111,8 +112,7 @@ var receiveBookings = function receiveBookings(bookings) {
     bookings: bookings
   };
 };
-var receiveBooking = function receiveBooking(_ref) {
-  var booking = _ref.booking;
+var receiveBooking = function receiveBooking(booking) {
   return {
     type: RECEIVE_BOOKING,
     booking: booking
@@ -129,6 +129,15 @@ var fetchBooking = function fetchBooking(id) {
   return function (dispatch) {
     return _utils_booking_utils__WEBPACK_IMPORTED_MODULE_0__["fetchBooking"](id).then(function (res) {
       return dispatch(receiveBooking(res));
+    });
+  };
+};
+var createNewBooking = function createNewBooking(formBooking) {
+  return function (dispatch) {
+    return _utils_booking_utils__WEBPACK_IMPORTED_MODULE_0__["postBooking"](formBooking).then(function (booking) {
+      return dispatch(receiveBooking(booking));
+    }, function (errors) {
+      return dispatch(receiveErrors(errors.responseJSON));
     });
   };
 };
@@ -1233,7 +1242,7 @@ function (_React$Component) {
       time: 0
     };
     _this.update = _this.update.bind(_assertThisInitialized(_this));
-    _this.handleFindATableInput = _this.handleFindATableInput.bind(_assertThisInitialized(_this));
+    _this.handleSubmit = _this.handleSubmit.bind(_assertThisInitialized(_this));
     return _this;
   }
 
@@ -1260,9 +1269,10 @@ function (_React$Component) {
       };
     }
   }, {
-    key: "handleFindATableInput",
-    value: function handleFindATableInput(e) {
+    key: "handleSubmit",
+    value: function handleSubmit(e) {
       e.preventDefault();
+      console.log(this.props);
       var restId, restName, userId, userFN;
 
       if (this.props.restaurant) {
@@ -1283,8 +1293,16 @@ function (_React$Component) {
       var time = this.state.time;
       var date = this.state.date;
       var numParty = this.state.numParty;
+      console.log("create new booking", this.props.createNewBooking);
       console.log("A table for ".concat(numParty, " \n      has been reserved for ").concat(userFN, " \n      on the date ").concat(date, " and time ").concat(time, "\n      at the wonderful restaurant ").concat(restName, "\n      ID: ").concat(restId, " and ").concat(userId, "\n      current bookings ").concat(bookings, "\n      "));
-      console.log(currentBookings);
+      var booking = {
+        numParty: numParty,
+        date: date,
+        time: time,
+        user_id: userId,
+        restaurant_id: restId
+      };
+      this.props.createNewBooking(booking);
     }
   }, {
     key: "render",
@@ -1313,7 +1331,7 @@ function (_React$Component) {
           className: "booking-section"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
           className: "BLANK",
-          onSubmit: this.handleFindATableInput
+          onSubmit: this.handleSubmit
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "booking-title"
         }, "Make A Reservation"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -1420,6 +1438,9 @@ var mdp = function mdp(dispatch) {
     },
     fetchBookings: function fetchBookings() {
       return dispatch(Object(_actions_booking_actions__WEBPACK_IMPORTED_MODULE_1__["fetchBookings"])());
+    },
+    createNewBooking: function createNewBooking(booking) {
+      return dispatch(Object(_actions_booking_actions__WEBPACK_IMPORTED_MODULE_1__["createNewBooking"])(booking));
     }
   };
 };

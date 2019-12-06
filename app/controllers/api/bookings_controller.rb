@@ -11,6 +11,7 @@ class Api::BookingsController < ApplicationController
   end
   def create
     @booking = Booking.new(booking_parmas)
+    # may not need this
     @booking.user_id = current_user.id
     if @booking.save
       # render "api/bookings/show"

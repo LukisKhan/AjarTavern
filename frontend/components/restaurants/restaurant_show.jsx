@@ -11,7 +11,7 @@ class RestaurantShow extends React.Component {
       time: 0
     };
     this.update = this.update.bind(this);
-    this.handleFindATableInput = this.handleFindATableInput.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
   componentDidMount() {
     this.props.fetchRestaurant(this.props.match.params.restaurantId);
@@ -27,8 +27,9 @@ class RestaurantShow extends React.Component {
       this.setState({ [field]: e.target.value });
     };
   }
-  handleFindATableInput(e) {
+  handleSubmit(e) {
     e.preventDefault();
+    console.log(this.props)
     let restId, restName, userId, userFN;
     if(this.props.restaurant) {
       restId = this.props.restaurant.id;
@@ -46,6 +47,7 @@ class RestaurantShow extends React.Component {
     let time = this.state.time;
     let date = this.state.date;
     let numParty = this.state.numParty;
+    console.log("create new booking", this.props.createNewBooking)
     console.log(`A table for ${numParty} 
       has been reserved for ${userFN} 
       on the date ${date} and time ${time}
@@ -53,7 +55,14 @@ class RestaurantShow extends React.Component {
       ID: ${restId} and ${userId}
       current bookings ${bookings}
       `)
-    console.log(currentBookings)
+    let booking = {
+      numParty,
+      date,
+      time,
+      user_id: userId,
+      restaurant_id: restId,
+    }
+    this.props.createNewBooking(booking);
   }
   render() {
     const restaurant = this.props.restaurant;
@@ -76,7 +85,7 @@ class RestaurantShow extends React.Component {
             </div>
             <div className="additional-section">
               <div className="booking-section">
-                <form className="BLANK" onSubmit={this.handleFindATableInput} >
+                <form className="BLANK" onSubmit={this.handleSubmit} >
                   <div className="booking-title">Make A Reservation</div>
                   <div className="party-size">
                     <div className="party-size-label">Party Size</div>

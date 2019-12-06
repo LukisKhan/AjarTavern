@@ -1,5 +1,5 @@
 import { fetchRestaurant } from '../../actions/restaurant_actions';
-import { fetchBookings } from '../../actions/booking_actions';
+import { fetchBookings, createNewBooking } from '../../actions/booking_actions';
 import { connect } from 'react-redux';
 import RestaurantShow from './restaurant_show';
 
@@ -18,7 +18,8 @@ const msp = (state, ownProps) => {
 
 const mdp = dispatch => ({
   fetchRestaurant: id => dispatch(fetchRestaurant(id)),
-  fetchBookings: () => dispatch(fetchBookings())
+  fetchBookings: () => dispatch(fetchBookings()),
+  createNewBooking: (booking) => dispatch(createNewBooking(booking)),
 });
 
 export default connect(msp, mdp)(RestaurantShow);
