@@ -997,13 +997,17 @@ function (_React$Component) {
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("nav", {
           className: "booking-dropdown"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
-          className: "square down fa",
+          className: "square fa",
           ref: function ref(iconRef) {
             return _this3.iconRef = iconRef;
           },
           onClick: _this3.toggleDropdown,
           onKeyUp: _this3.handleKeyUp
-        })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "notification"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "notification-num"
+        }, "2")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "greetings"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", {
           className: "header-name"

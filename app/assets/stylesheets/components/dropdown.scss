@@ -6,18 +6,6 @@
   display: block;
 }
 
-i {
-  border: solid grey;
-  border-width: 0 1px 1px 0;
-  display: inline-block;
-  padding: 4px;
-  margin: 3px 10px;
-}
-.down {
-  transform: rotate(45deg);
-  -webkit-transform: rotate(45deg);
-}
-
 .dropdown-items {
   position: absolute;
   margin-top: 15px;

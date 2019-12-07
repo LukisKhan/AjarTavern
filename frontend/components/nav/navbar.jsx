@@ -55,7 +55,11 @@ class Navbar extends React.Component {
       <span className="nav-links">
         <nav className="booking-dropdown">
           {/* start here tomorrow, bookings dropdown */}
-          <i className="square down fa" ref={iconRef => this.iconRef = iconRef} onClick={this.toggleDropdown} onKeyUp={this.handleKeyUp}></i>
+          <i className="square fa" ref={iconRef => this.iconRef = iconRef} onClick={this.toggleDropdown} onKeyUp={this.handleKeyUp}>
+            <div className="notification">
+              <div className="notification-num">2</div>
+            </div>
+          </i>
         </nav>
         <div className="greetings">
           <h3 className="header-name">Hi, {this.props.currentUser.firstname} 
