@@ -29,15 +29,12 @@ class RestaurantShow extends React.Component {
   }
   handleSubmit(e) {
     e.preventDefault();
-    console.log(this.props)
-    let restId, restName, userId, userFN;
+    let restId, userId;
     if(this.props.restaurant) {
       restId = this.props.restaurant.id;
-      restName = this.props.restaurant.name;
     }
     if(this.props.currentUser) {
       userId = this.props.currentUser.id;
-      userFN = this.props.currentUser.firstname;
     }
     let bookings = this.props.bookings;
     let currentBookings = [];
@@ -47,14 +44,6 @@ class RestaurantShow extends React.Component {
     let time = this.state.time;
     let date = this.state.date;
     let numParty = this.state.numParty;
-    console.log("create new booking", this.props.createNewBooking)
-    console.log(`A table for ${numParty} 
-      has been reserved for ${userFN} 
-      on the date ${date} and time ${time}
-      at the wonderful restaurant ${restName}
-      ID: ${restId} and ${userId}
-      current bookings ${bookings}
-      `)
     let booking = {
       numParty,
       date,
@@ -63,6 +52,8 @@ class RestaurantShow extends React.Component {
       restaurant_id: restId,
     }
     this.props.createNewBooking(booking);
+    //at this point, the new booking is not in the bookings entities
+    console.log(currentBookings)
   }
   render() {
     const restaurant = this.props.restaurant;

@@ -134,10 +134,8 @@ var fetchBooking = function fetchBooking(id) {
 };
 var createNewBooking = function createNewBooking(formBooking) {
   return function (dispatch) {
-    return _utils_booking_utils__WEBPACK_IMPORTED_MODULE_0__["postBooking"](formBooking).then(function (booking) {
-      return dispatch(receiveBooking(booking));
-    }, function (errors) {
-      return dispatch(receiveErrors(errors.responseJSON));
+    return _utils_booking_utils__WEBPACK_IMPORTED_MODULE_0__["postBooking"](formBooking).then(function (res) {
+      return dispatch(receiveBooking(res));
     });
   };
 };
@@ -996,6 +994,17 @@ function (_React$Component) {
       var greeting = function greeting() {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
           className: "nav-links"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("nav", {
+          className: "booking-dropdown"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+          className: "square down fa",
+          ref: function ref(iconRef) {
+            return _this3.iconRef = iconRef;
+          },
+          onClick: _this3.toggleDropdown,
+          onKeyUp: _this3.handleKeyUp
+        })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "greetings"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", {
           className: "header-name"
         }, "Hi, ", _this3.props.currentUser.firstname, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
@@ -1022,7 +1031,7 @@ function (_React$Component) {
           className: "drop-list-item"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
           onClick: _this3.props.logout
-        }, "Log Out")))));
+        }, "Log Out"))))));
       };
 
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("nav", {
@@ -1272,17 +1281,14 @@ function (_React$Component) {
     key: "handleSubmit",
     value: function handleSubmit(e) {
       e.preventDefault();
-      console.log(this.props);
-      var restId, restName, userId, userFN;
+      var restId, userId;
 
       if (this.props.restaurant) {
         restId = this.props.restaurant.id;
-        restName = this.props.restaurant.name;
       }
 
       if (this.props.currentUser) {
         userId = this.props.currentUser.id;
-        userFN = this.props.currentUser.firstname;
       }
 
       var bookings = this.props.bookings;
@@ -1293,8 +1299,6 @@ function (_React$Component) {
       var time = this.state.time;
       var date = this.state.date;
       var numParty = this.state.numParty;
-      console.log("create new booking", this.props.createNewBooking);
-      console.log("A table for ".concat(numParty, " \n      has been reserved for ").concat(userFN, " \n      on the date ").concat(date, " and time ").concat(time, "\n      at the wonderful restaurant ").concat(restName, "\n      ID: ").concat(restId, " and ").concat(userId, "\n      current bookings ").concat(bookings, "\n      "));
       var booking = {
         numParty: numParty,
         date: date,
@@ -1302,7 +1306,9 @@ function (_React$Component) {
         user_id: userId,
         restaurant_id: restId
       };
-      this.props.createNewBooking(booking);
+      this.props.createNewBooking(booking); //at this point, the new booking is not in the bookings entities
+
+      console.log(currentBookings);
     }
   }, {
     key: "render",
