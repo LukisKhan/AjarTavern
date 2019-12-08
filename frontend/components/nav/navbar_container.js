@@ -3,9 +3,10 @@ import { logout } from '../../actions/session_action';
 import Navbar from './navbar';
 import { openModal } from '../../actions/modal_actions';
 
-const mapStateToProps = ({ session, entities: { users } }) => {
+const mapStateToProps = ({ session, entities: { users, bookings } }) => {
   return {
-    currentUser: users[session.id]
+    currentUser: users[session.id],
+    currentBookings: bookings
   };
 };
 

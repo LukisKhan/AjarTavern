@@ -903,17 +903,21 @@ function (_React$Component) {
 
     _this = _possibleConstructorReturn(this, _getPrototypeOf(Navbar).call(this, props));
     _this.state = {
-      dropdown: 'dropdown-hidden'
+      dropdown: 'dropdown-hidden',
+      notificationDropdown: 'dropdown-hidden'
     };
     _this.openModalFor = _this.openModalFor.bind(_assertThisInitialized(_this));
     _this.handleClick = _this.handleClick.bind(_assertThisInitialized(_this));
     _this.handleKeyUp = _this.handleKeyUp.bind(_assertThisInitialized(_this));
     _this.toggleDropdown = _this.toggleDropdown.bind(_assertThisInitialized(_this));
+    _this.handleNotiKeyUp = _this.handleNotiKeyUp.bind(_assertThisInitialized(_this));
+    _this.toggleNotificationDropdown = _this.toggleNotificationDropdown.bind(_assertThisInitialized(_this));
     return _this;
   }
 
   _createClass(Navbar, [{
     key: "toggleDropdown",
+    //////Needs refractoring to combine the two separate modal toggles
     value: function toggleDropdown() {
       if (this.state.dropdown === 'dropdown-hidden') {
         this.setState({
@@ -922,6 +926,19 @@ function (_React$Component) {
       } else {
         this.setState({
           dropdown: 'dropdown-hidden'
+        });
+      }
+    }
+  }, {
+    key: "toggleNotificationDropdown",
+    value: function toggleNotificationDropdown() {
+      if (this.state.notificationDropdown === 'dropdown-hidden') {
+        this.setState({
+          notificationDropdown: 'dropdown-visible'
+        });
+      } else {
+        this.setState({
+          notificationDropdown: 'dropdown-hidden'
         });
       }
     }
@@ -954,7 +971,8 @@ function (_React$Component) {
       }
 
       this.setState({
-        dropdown: 'dropdown-hidden'
+        dropdown: 'dropdown-hidden',
+        notificationDropdown: 'dropdown-hidden'
       });
     }
   }, {
@@ -971,6 +989,45 @@ function (_React$Component) {
           });
         }
       }
+    }
+  }, {
+    key: "handleNotiKeyUp",
+    value: function handleNotiKeyUp(e) {
+      if (e.keyCode === 13) {
+        if (this.state.notificationDropdown === 'dropdown-hidden') {
+          this.setState({
+            notificationDropdown: 'dropdown-visible'
+          });
+          this.bookingsDetail();
+        } else {
+          this.setState({
+            notificationDropdown: 'dropdown-hidden'
+          });
+        }
+      }
+    }
+  }, {
+    key: "bookingsDetail",
+    value: function bookingsDetail() {
+      var currUserId = this.props.currentUser.id;
+      var currentBookings = document.getElementById('notification-list');
+
+      if (currentBookings) {
+        var children = currentBookings.childNodes;
+
+        for (var i = 0; i < children.length; i++) {
+          currentBookings.removeChild(children[i]);
+        }
+      }
+
+      Object.values(this.props.currentBookings).forEach(function (booking) {
+        if (booking.user_id === currUserId) {
+          var li = document.createElement("LI");
+          li.innerText = "Date ".concat(booking.date, " time: ").concat(booking.time - 12, " PM");
+          li.className = "drop-list-item";
+          currentBookings.appendChild(li);
+        }
+      });
     }
   }, {
     key: "render",
@@ -1001,13 +1058,22 @@ function (_React$Component) {
           ref: function ref(iconRef) {
             return _this3.iconRef = iconRef;
           },
-          onClick: _this3.toggleDropdown,
-          onKeyUp: _this3.handleKeyUp
+          onClick: _this3.toggleNotificationDropdown,
+          onKeyUp: _this3.handleNotiKeyUp
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "notification"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "notification-num"
-        }, "2")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        }, "2"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
+          ref: function ref(dropdownRef) {
+            return _this3.dropdownRef = dropdownRef;
+          },
+          id: "notification-dropdown",
+          className: _this3.state.notificationDropdown
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+          className: "dropdown-items",
+          id: "notification-list"
+        }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "greetings"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", {
           className: "header-name"
@@ -1038,6 +1104,7 @@ function (_React$Component) {
         }, "Log Out"))))));
       };
 
+      this.bookingsDetail();
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("nav", {
         className: "navbar"
       }, this.props.currentUser ? greeting() : sessionLinks());
@@ -1072,9 +1139,12 @@ __webpack_require__.r(__webpack_exports__);
 
 var mapStateToProps = function mapStateToProps(_ref) {
   var session = _ref.session,
-      users = _ref.entities.users;
+      _ref$entities = _ref.entities,
+      users = _ref$entities.users,
+      bookings = _ref$entities.bookings;
   return {
-    currentUser: users[session.id]
+    currentUser: users[session.id],
+    currentBookings: bookings
   };
 };
 

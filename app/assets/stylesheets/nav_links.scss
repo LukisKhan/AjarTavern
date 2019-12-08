@@ -56,3 +56,11 @@ i {
 .notification-num{
   font-size: 12px;
 }
+#notification-dropdown {
+  position: absolute;
+  background-color: white;
+  z-index: 1;
+}
+#notification-list li{
+  background-color: white;
+}
