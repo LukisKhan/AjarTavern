@@ -194,11 +194,13 @@ body, html {
 .restaurant-search-box {
   position: relative;
   display: flex;
+  margin: 0 auto;
+  padding: none;
   height: 45px;
   justify-content: space-evenly;
   top: -250px;
   width: 70vw;
-  left: 15vw;
+  // left: 15vw;
 }
 .search-header{
   position: relative;
@@ -218,6 +220,7 @@ select {
   -webkit-border-radius: 0px;
 }
 .search-options {
+  display: flex;
   font-size: 20px;
 }
 .date-dropdown {
@@ -264,6 +267,7 @@ select {
   background-color: #da3743;
   color: white;
   padding: 10px 0px;
+  min-width: 150px;
 }
 #lets-go-btn:hover {
   background-color: #b5202a;
@@ -278,6 +282,58 @@ input:focus {
   position: relative;
   bottom: 100px;
 }
-.featured-restaurants-label {
-  // padding: 20px 0px;
+// .featured-restaurants-label {
+//   padding: 20px 0px;
+// }
+
+@media only screen and (max-width: 900px) {
+  .search-header{
+    bottom: 350px;
+    font-size: 36;
+    max-height: 80px;
+    margin-bottom: 10px;
+  }
+  .restaurant-search-box {
+    // left: 0px;
+    width: 90%;
+    align-content: center;
+    // height: 400px;
+    // margin: 0 auto;
+    // padding: none;
+    flex-direction: column;
+    // background-color: purple;
+  }
+  .search-options{
+    width: 100%;
+    align-content: center;
+    display:flex;
+    justify-content: space-evenly;
+    margin-bottom: 10px;
+  }
+  .num-guests-select{
+    width: 33%;
+  }
+  .time-select{
+    width: 33%;
+  }
+  .date-dropdown{
+    width: 33%;
+  }
+  .search-field {
+    width: 100%;
+    // margin-left: auto;
+    align-content: center;
+    padding: 10px 0px 10px 0px;
+    margin-bottom: 10px;
+  }
+  #lets-go-btn {
+    width: 100%;
+    align-content: center;
+    // background-color: black;
+  }
 }
+// @media only screen and (max-width: 300px) {
+//   .search-header {
+//     display: none;
+//   }
+// }

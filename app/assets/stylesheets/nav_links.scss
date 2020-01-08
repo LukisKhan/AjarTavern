@@ -53,8 +53,13 @@ i {
   left: 10px;
   bottom: 10px;
 }
-.notification-num{
+// .notification-num-hidden{
+//   font-size: 12px;
+//   display: none;
+// }
+.notification-num {
   font-size: 12px;
+  // display: block;
 }
 #notification-dropdown {
   position: absolute;
@@ -63,4 +68,6 @@ i {
 }
 #notification-list li{
   background-color: white;
+  border-bottom: 1px solid rgb(170, 162, 162);
+  padding: 2px;
 }

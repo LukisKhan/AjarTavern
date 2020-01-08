@@ -24,6 +24,9 @@ class Api::BookingsController < ApplicationController
     @booking = Booking.find(params[:id])
   end
   def destroy
+    print "deleting"
+    @booking = Booking.find(params[:id])
+    @booking.delete;  
   end
   private
   def booking_parmas

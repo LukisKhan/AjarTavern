@@ -19,7 +19,7 @@ const Main = () => {
     </select> );
   const selectNumGuest = (
     <select name="guests" id="" className="num-guests-select">
-      <option value="2">2 people</option><span>3 people</span>
+      <option value="2">2 people</option>
       <option value="3">3 people</option>
       <option value="4">4 people</option>
       <option value="5">5 people</option>
