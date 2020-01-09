@@ -2,12 +2,14 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import configureStore from './store/store';
 import Root from './components/root';
+import Favicon from 'react-favicon';
 //testing
 // import { createNewUser, login, logout } from './actions/session_action';
 //
 
 document.addEventListener('DOMContentLoaded', () => {
   let store;
+  //add favicon
   if (window.currentUser) {
     const preloadedState = {
       entities: {
@@ -21,6 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
     store = configureStore();
   }
   const root = document.getElementById('root');
+  ReactDOM.render(<Favicon url="https://logodix.com/logo/44718.png" />, root);
   ReactDOM.render(<Root store={store} />, root);
 
 //testing
@@ -57,3 +60,4 @@ document.addEventListener('DOMContentLoaded', () => {
 //     modal.style.display = "none";
 //   }
 // }
+
