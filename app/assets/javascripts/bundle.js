@@ -155,11 +155,7 @@ var createNewBooking = function createNewBooking(formBooking) {
       return dispatch(receiveBooking(res));
     });
   };
-}; // Action items for week of 1 / 6:
-//   - JS: Favicon, Title, Header with title, Footer with links, Instricutions, CSS tweaks(due 1 / 8)
-//   - FS: Favicon, CSS Tweaks(Due 1 / 8)
-//   - 40 Applications
-//   - 30 min of InterviewDB every day.
+};
 
 /***/ }),
 
