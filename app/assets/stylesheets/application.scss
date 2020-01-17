@@ -287,6 +287,11 @@ input:focus {
 // }
 
 @media only screen and (max-width: 900px) {
+  .main-content-root{
+    display: flex;
+    flex-direction: column;
+    //CODE HERE
+  }
   .search-header{
     bottom: 350px;
     font-size: 36;
